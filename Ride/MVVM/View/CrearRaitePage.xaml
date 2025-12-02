@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ride.MVVM.View.CrearRaitePage"
+             Title="CrearRaitePage">
+    <ScrollView>
+        <StackLayout Spacing="25">
+            <Label Text="Publica tu Viaje" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#38A98F"/>
+            <Label Text="Punto de Origen" FontAttributes="Bold"/>
+            <Entry Placeholder="Introduce tu ubicación actual o punto de partida" Text="{Binding Origen}" />
+            <Label Text="Destino Final" FontAttributes="Bold"/>
+            <Entry Placeholder="¿A dónde vas?" Text="{Binding Destino}" />
+            <Grid ColumnDefinitions="*,*">
+                <DatePicker Date="{Binding FechaSalida}" />
+                <TimePicker Time="{Binding HoraSalida}" Grid.Column="1"/>
+            </Grid>
+            <Grid ColumnDefinitions="*,*">
+                <Entry Placeholder="Asientos (Ej: 3)" Text="{Binding AsientosDisponibles}" Keyboard="Numeric"/>
+                <Entry Placeholder="Precio por asiento (MXN)" Text="{Binding PrecioPorAsiento}" Keyboard="Numeric" Grid.Column="1"/>
+            </Grid>
+            <Button Text="Publicar Raite Ahora" HeightRequest="55" Command="{Binding PublicarCommand}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

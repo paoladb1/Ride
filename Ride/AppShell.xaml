@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Ride.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Ride.MVVM.View"
+    Title="Ride">
+
+    <!-- Pantalla de Login -->
+    <ShellContent 
+        Route="LoginPage" 
+        ContentTemplate="{DataTemplate views:LoginPage}" />
+
+    <FlyoutItem Title="Inicio">
+        <ShellContent 
+            Route="Paginaprincipal" 
+            ContentTemplate="{DataTemplate views:Paginaprincipal}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Pedir Raite">
+        <ShellContent 
+            Route="PedirRide" 
+            ContentTemplate="{DataTemplate views:PedirRide}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Perfil">
+        <ShellContent 
+            Route="Perfil" 
+            ContentTemplate="{DataTemplate views:Perfil}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Mis Raites">
+        <ShellContent 
+            Route="MisRides" 
+            ContentTemplate="{DataTemplate views:MisRides}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Mensajes">
+        <ShellContent 
+            Route="Mensajes" 
+            ContentTemplate="{DataTemplate views:Mensajes}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Inicio Raite">
+        <ShellContent 
+            Route="HomePage" 
+            ContentTemplate="{DataTemplate views:HomePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Crear Raite">
+        <ShellContent 
+            Route="CrearRaitePage" 
+            ContentTemplate="{DataTemplate views:CrearRaitePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Detalle Raite">
+        <ShellContent 
+            Route="DetalleRaitePage" 
+            ContentTemplate="{DataTemplate views:DetalleRaitePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Solicitar Raite">
+        <ShellContent 
+            Route="SolicitarRaitePage" 
+            ContentTemplate="{DataTemplate views:SolicitarRaitePage}" />
+    </FlyoutItem>
+
+</Shell>

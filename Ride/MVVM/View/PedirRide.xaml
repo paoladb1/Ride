@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ride.MVVM.View.PedirRide"
+             Title="PedirRide">
+    
+    <VerticalStackLayout Padding="25" Spacing="22">
+        <Label Text="Pedir Raite" FontSize="30" FontAttributes="Bold" />
+        <Label Text="Aquí podrás pedir un ride indicando tu destino." FontSize="15" TextColor="#6E8CA0"/>
+
+        <Frame BackgroundColor="White" CornerRadius="20" Padding="20" HasShadow="True" Margin="0,20,0,0">
+            <VerticalStackLayout>
+                <Label Text="Formulario próximamente disponible." HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

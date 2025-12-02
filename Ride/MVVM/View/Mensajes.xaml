@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ride.MVVM.View.Mensajes"
+                Title="Mensajes">
+    <Grid RowDefinitions="Auto,*">
+    <SearchBar Grid.Row="0" Placeholder="Buscar en mensajes..." Margin="10,5" HeightRequest="45" BackgroundColor="#F0F0F0"/>
+    <CollectionView Grid.Row="1" ItemsSource="{Binding Conversations}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="15,10" ColumnDefinitions="Auto,*,Auto">
+                    <Frame CornerRadius="30" WidthRequest="60" HeightRequest="60" Padding="0" IsClippedToBounds="True">
+                        <Image Source="{Binding AvatarUrl}" Aspect="AspectFill"/>
+                    </Frame>
+                    <StackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="{Binding ContactName}" FontAttributes="Bold"/>
+                        <Label Text="{Binding LastMessage}" FontSize="14" TextColor="#666" LineBreakMode="TailTruncation"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center">
+                        <Label Text="{Binding TimeAgo}" FontSize="12"/>
+                    </StackLayout>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+    </Grid>
+</ContentPage>

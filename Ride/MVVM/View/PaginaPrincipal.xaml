@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ride.MVVM.View.PaginaPrincipal"
+             Title="PaginaPrincipal">
+    
+    <VerticalStackLayout Padding="25" Spacing="22">
+        <Label Text="Encuentra tu ride" FontSize="30" FontAttributes="Bold" />
+        <Label Text="Conecta con estudiantes que van hacia tu mismo destino." FontSize="15" TextColor="#6E8CA0"/>
+
+        <Button Text="Buscar Raite" HeightRequest="45" CornerRadius="20"
+            BackgroundColor="#005BBB" TextColor="White"
+            Command="{Binding BuscarRaiteCommand}" />
+
+        <VerticalStackLayout Spacing="15" Margin="0,20,0,0">
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="Rápido y simple" FontAttributes="Bold" />
+                    <Label Text="Busca o comparte ride en segundos." TextColor="#6E8CA0" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="Seguro" FontAttributes="Bold" />
+                    <Label Text="Todos los viajes verificados." TextColor="#6E8CA0"/>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
