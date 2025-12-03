@@ -1,7 +1,6 @@
 using Ride;
-using Ride;
 
-namespace Ride
+namespace Ride.MVVM.View
 {
     public partial class LoginPage : ContentPage
     {
@@ -9,11 +8,6 @@ namespace Ride
         {
             InitializeComponent();
             BindingContext = new LoginViewModel();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -1,12 +1,12 @@
 using System.Windows.Input;
 
-namespace Ride;
-
-    public class PaginaprincipalViewModel
+namespace Ride.MVVM.ViewModel
+{
+    public class PaginaPrincipalViewModel
     {
         public ICommand BuscarRaiteCommand { get; }
 
-        public PaginaprincipalViewModel()
+        public PaginaPrincipalViewModel()
         {
             BuscarRaiteCommand = new Command(async () =>
             {
@@ -14,3 +14,4 @@ namespace Ride;
             });
         }
     }
+}

@@ -1,8 +1,6 @@
-
-
 using Ride;
 
-namespace Ride
+namespace Ride.MVVM.View
 {
     public partial class Perfil : ContentPage
     {
@@ -10,11 +8,6 @@ namespace Ride
         {
             InitializeComponent();
             BindingContext = new PerfilViewModel();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
         }
     }
 }

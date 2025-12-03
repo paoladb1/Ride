@@ -1,7 +1,6 @@
 using Ride;
 
-
-namespace Ride
+namespace Ride.MVVM.View
 {
     public partial class CrearRaitePage : ContentPage
     {
@@ -9,11 +8,6 @@ namespace Ride
         {
             InitializeComponent();
             BindingContext = new CrearRaiteViewModel();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -16,7 +16,7 @@
                 <Frame BackgroundColor="#F9F9F9" CornerRadius="10" Padding="15">
                     <StackLayout>
                         <Label Text="San Francisco to Palo Alto" FontAttributes="Bold"/>
-                        <Label Text="Today, 7:00 AM | Driver: Jane Doe" TextColor="#666"/>
+                        <Label Text="Today, 7:00 AM | Driver: Jane Doe" TextColor="Blue"/>
                         <Label Text="$72.00" HorizontalOptions="End" TextColor="#38A98F" FontAttributes="Bold"/>
                         <Button Text="Ver detalle" Command="{Binding VerDetalleCommand}" HorizontalOptions="End"/>
                     </StackLayout>

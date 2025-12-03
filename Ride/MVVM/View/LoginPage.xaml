@@ -2,14 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.LoginPage"
-             Title="LoginPage">
+             Title="Login">
+
     <VerticalStackLayout Padding="30" Spacing="20">
-        <Label Text="RIDEUNI" FontSize="36" FontAttributes="Bold" HorizontalOptions="Center"/>
+        <Label Text="RIDEUNI" 
+               FontSize="36" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
         <Label Text="Correo" />
-        <Entry Placeholder="ejemplo@dominio.com" Text="{Binding Correo}" Keyboard="Email"/>
+        <Entry Placeholder="ejemplo@dominio.com"
+               Text="{Binding Correo}" 
+               Keyboard="Email"/>
+
         <Label Text="Contraseña" />
-        <Entry Placeholder="********" IsPassword="True" Text="{Binding Contraseña}"/>
-        <Button Text="INICIAR SESIÓN" HeightRequest="50" Command="{Binding IniciarSesionCommand}"/>
-        <Button Text="CREAR CUENTA" HeightRequest="50" Command="{Binding CrearCuentaCommand}"/>
+        <Entry Placeholder="********" 
+               IsPassword="True" 
+               Text="{Binding Contraseña}"/>
+
+        <Button Text="INICIAR SESIÓN" 
+                HeightRequest="50" 
+                Command="{Binding IniciarSesionCommand}"/>
+
+        <Button Text="CREAR CUENTA" 
+                HeightRequest="50" 
+                Command="{Binding CrearCuentaCommand}"/>
     </VerticalStackLayout>
+
 </ContentPage>

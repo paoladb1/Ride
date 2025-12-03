@@ -6,18 +6,18 @@
     xmlns:views="clr-namespace:Ride.MVVM.View"
     Title="Ride">
 
-    <!-- Pantalla de Login -->
+    <!-- Login -->
     <ShellContent 
         Route="LoginPage" 
         ContentTemplate="{DataTemplate views:LoginPage}" />
 
     <FlyoutItem Title="Inicio">
         <ShellContent 
-            Route="Paginaprincipal" 
-            ContentTemplate="{DataTemplate views:Paginaprincipal}" />
+            Route="PaginaPrincipal" 
+            ContentTemplate="{DataTemplate views:PaginaPrincipal}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Pedir Raite">
+    <FlyoutItem Title="Pedir Ride">
         <ShellContent 
             Route="PedirRide" 
             ContentTemplate="{DataTemplate views:PedirRide}" />
@@ -29,7 +29,7 @@
             ContentTemplate="{DataTemplate views:Perfil}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Mis Raites">
+    <FlyoutItem Title="Mis Rides">
         <ShellContent 
             Route="MisRides" 
             ContentTemplate="{DataTemplate views:MisRides}" />

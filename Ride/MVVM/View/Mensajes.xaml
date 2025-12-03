@@ -14,7 +14,7 @@
                     </Frame>
                     <StackLayout Grid.Column="1" VerticalOptions="Center">
                         <Label Text="{Binding ContactName}" FontAttributes="Bold"/>
-                        <Label Text="{Binding LastMessage}" FontSize="14" TextColor="#666" LineBreakMode="TailTruncation"/>
+                        <Label Text="{Binding LastMessage}" FontSize="14" TextColor="Blue" LineBreakMode="TailTruncation"/>
                     </StackLayout>
                     <StackLayout Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center">
                         <Label Text="{Binding TimeAgo}" FontSize="12"/>

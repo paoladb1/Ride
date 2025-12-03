@@ -1,18 +1,13 @@
-using Ride;
+using Ride.MVVM.ViewModel;
 
-namespace Ride;
-
-public partial class PaginaPrincipal : ContentPage
+namespace Ride.MVVM.View
 {
-	public PaginaPrincipal()
-	{
-        InitializeComponent();
-
-        BindingContext = new PaginaprincipalViewModel();
-    }
-
-    private void InitializeComponent()
+    public partial class PaginaPrincipal : ContentPage
     {
-        throw new NotImplementedException();
+        public PaginaPrincipal()
+        {
+            InitializeComponent();
+            BindingContext = new PaginaPrincipalViewModel();
+        }
     }
 }
