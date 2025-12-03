@@ -1,15 +1,13 @@
 
-namespace Ride
+namespace Ride.MVVM.View
 {
     public partial class SolicitarRaitePage : ContentPage
     {
-        public SolicitarRaitePage() { InitializeComponent(); }
-
-        private void InitializeComponent()
+        public SolicitarRaitePage()
         {
-            throw new NotImplementedException();
+            InitializeComponent();
         }
-    }
 
+       
+    }
 }
-   

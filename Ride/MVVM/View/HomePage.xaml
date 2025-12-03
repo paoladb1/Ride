@@ -2,26 +2,35 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.HomePage"
-             Title="HomePage">
-    <Grid RowDefinitions="Auto,Auto,*,Auto">
-        <SearchBar Grid.Row="0" Placeholder="Buscar destino o ruta..." HeightRequest="50" BackgroundColor="#F0F0F0"/>
-        <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="10" Margin="0,10">
-            <Button Text="Solicitar Raite" Command="{Binding IrASolicitarRaiteCommand}" BackgroundColor="#66BBCC" />
-            <Button Text="Crear Raite" Command="{Binding IrACrearRaiteCommand}" BackgroundColor="#38A98F" />
-        </StackLayout>
+             Title="Inicio Raite">
 
-        <ScrollView Grid.Row="2">
-            <VerticalStackLayout Spacing="25">
-                <Label Text="Raítes Cercanos" FontAttributes="Bold" FontSize="18"/>
-                <Frame BackgroundColor="#F9F9F9" CornerRadius="10" Padding="15">
-                    <StackLayout>
-                        <Label Text="San Francisco to Palo Alto" FontAttributes="Bold"/>
-                        <Label Text="Today, 7:00 AM | Driver: Jane Doe" TextColor="Blue"/>
-                        <Label Text="$72.00" HorizontalOptions="End" TextColor="#38A98F" FontAttributes="Bold"/>
-                        <Button Text="Ver detalle" Command="{Binding VerDetalleCommand}" HorizontalOptions="End"/>
-                    </StackLayout>
-                </Frame>
-            </VerticalStackLayout>
-        </ScrollView>
-    </Grid>
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <Label Text="¡Bienvenido a RideUni!"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#005BBB"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Raites disponibles"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#005BBB"/>
+
+            <!-- Ejemplo de raites -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <Label Text="Sendero → Uts (7:10 AM)" />
+            </Frame>
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <Label Text="Mercado → Itson (11:00 AM)" />
+            </Frame>
+
+            <!-- Botón para ir a otra página de Raites -->
+            <Button Text="Ver más Raites"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    Clicked="BtnVerRaites_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -6,63 +6,52 @@
     xmlns:views="clr-namespace:Ride.MVVM.View"
     Title="Ride">
 
-    <!-- Login -->
-    <ShellContent 
-        Route="LoginPage" 
-        ContentTemplate="{DataTemplate views:LoginPage}" />
-
+    <!-- La pantalla inicial será PaginaPrincipal -->
     <FlyoutItem Title="Inicio">
-        <ShellContent 
-            Route="PaginaPrincipal" 
-            ContentTemplate="{DataTemplate views:PaginaPrincipal}" />
+        <ShellContent Route="PaginaPrincipal"
+                      ContentTemplate="{DataTemplate views:PaginaPrincipal}" />
     </FlyoutItem>
 
+   
+
     <FlyoutItem Title="Pedir Ride">
-        <ShellContent 
-            Route="PedirRide" 
-            ContentTemplate="{DataTemplate views:PedirRide}" />
+        <ShellContent Route="PedirRide"
+                      ContentTemplate="{DataTemplate views:PedirRide}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Perfil">
-        <ShellContent 
-            Route="Perfil" 
-            ContentTemplate="{DataTemplate views:Perfil}" />
+        <ShellContent Route="Perfil"
+                      ContentTemplate="{DataTemplate views:Perfil}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Mis Rides">
-        <ShellContent 
-            Route="MisRides" 
-            ContentTemplate="{DataTemplate views:MisRides}" />
+        <ShellContent Route="MisRides"
+                      ContentTemplate="{DataTemplate views:MisRides}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Mensajes">
-        <ShellContent 
-            Route="Mensajes" 
-            ContentTemplate="{DataTemplate views:Mensajes}" />
+        <ShellContent Route="Mensajes"
+                      ContentTemplate="{DataTemplate views:Mensajes}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Inicio Raite">
-        <ShellContent 
-            Route="HomePage" 
-            ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Route="HomePage"
+                      ContentTemplate="{DataTemplate views:HomePage}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Crear Raite">
-        <ShellContent 
-            Route="CrearRaitePage" 
-            ContentTemplate="{DataTemplate views:CrearRaitePage}" />
+        <ShellContent Route="CrearRaitePage"
+                      ContentTemplate="{DataTemplate views:CrearRaitePage}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Detalle Raite">
-        <ShellContent 
-            Route="DetalleRaitePage" 
-            ContentTemplate="{DataTemplate views:DetalleRaitePage}" />
+        <ShellContent Route="DetalleRaitePage"
+                      ContentTemplate="{DataTemplate views:DetalleRaitePage}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Solicitar Raite">
-        <ShellContent 
-            Route="SolicitarRaitePage" 
-            ContentTemplate="{DataTemplate views:SolicitarRaitePage}" />
+        <ShellContent Route="SolicitarRaitePage"
+                      ContentTemplate="{DataTemplate views:SolicitarRaitePage}" />
     </FlyoutItem>
 
 </Shell>

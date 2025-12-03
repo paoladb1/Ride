@@ -16,7 +16,7 @@ namespace Ride
         private async Task SolicitarRaite()
         {
             await Application.Current.MainPage.DisplayAlert("Solicitud Enviada", "Tu solicitud fue enviada al conductor.", "OK");
-            await Shell.Current.GoToAsync(nameof(MisRides));
+            await Shell.Current.GoToAsync(nameof(MVVM.View.MisRides));
         }
     }
 }

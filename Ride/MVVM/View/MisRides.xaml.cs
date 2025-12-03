@@ -1,13 +1,10 @@
-
-namespace Ride
+namespace Ride.MVVM.View
 {
     public partial class MisRides : ContentPage
     {
-        public MisRides() { InitializeComponent(); }
-
-        private void InitializeComponent()
+        public MisRides()
         {
-            throw new NotImplementedException();
+            InitializeComponent();
         }
     }
 }

@@ -1,22 +1,41 @@
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
-namespace Ride;
-
-    public class ConversationItem
+namespace Ride.MVVM.ViewModel
+{
+    public class MensajesViewModel : BaseViewModel
     {
-        public string AvatarUrl { get; set; } = "dotnet_bot.png";
-        public string ContactName { get; set; }
-        public string LastMessage { get; set; }
-        public string TimeAgo { get; set; }
-    }
+        public ObservableCollection<string> Mensajes { get; set; } = new();
 
-    public class MensajesViewModel
-    {
-        public ObservableCollection<ConversationItem> Conversations { get; } = new();
+        private string _mensajeNuevo;
+        public string MensajeNuevo
+        {
+            get => _mensajeNuevo;
+            set
+            {
+                _mensajeNuevo = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ICommand EnviarCommand { get; }
 
         public MensajesViewModel()
         {
-            Conversations.Add(new ConversationItem { ContactName = "Jane D", LastMessage = "Hey, are you still on for the morning?", TimeAgo = "2h" });
-            Conversations.Add(new ConversationItem { ContactName = "Mark", LastMessage = "Listo para salir.", TimeAgo = "1d" });
+            Mensajes.Add("Hola, ¿a qué hora pasas?");
+            Mensajes.Add("En 10 minutos.");
+            Mensajes.Add("Perfecto, aquí te espero.");
+
+            EnviarCommand = new Command(EnviarMensaje);
+        }
+
+        private void EnviarMensaje()
+        {
+            if (!string.IsNullOrWhiteSpace(MensajeNuevo))
+            {
+                Mensajes.Add(MensajeNuevo);
+                MensajeNuevo = string.Empty;
+            }
         }
     }
+}

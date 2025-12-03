@@ -1,10 +1,38 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.SolicitarRaitePage"
-             Title="SolicitarRaitePage">
-    <VerticalStackLayout Padding="25" Spacing="22">
-        <Label Text="Solicitar Raite" FontSize="30" FontAttributes="Bold"/>
-        <Label Text="Próximamente disponible." />
+             Title="Solicitar Raite">
+
+    <!-- Fondo con degradado -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Padding="25" Spacing="20">
+
+        <Label Text="Opciones de Raites Disponibles" 
+               FontSize="26" 
+               FontAttributes="Bold" 
+               TextColor="#005BBB"/>
+
+        <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+        <Label Text="Conductor: Carlos Mendez - 5:15 PM" />
+        </Frame>
+        <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+        <Label Text="Conductora: Ana López - 7:15 AM" />
+        </Frame>
+        <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+            <Label Text="Conductor: Rodolfo - 1:00 PM" />
+        </Frame>
+
+        <Button Text="Solicitar Ride"
+                BackgroundColor="#005BBB"
+                TextColor="White"
+                CornerRadius="12"
+                HeightRequest="50" />
+
     </VerticalStackLayout>
 </ContentPage>

@@ -2,13 +2,59 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.MisRides"
-             Title="MisRides">
-    <VerticalStackLayout Padding="25" Spacing="22">
-        <Label Text="Mis Raites" FontSize="30" FontAttributes="Bold" />
-        <Label Text="Aquí aparecerán los raites que has solicitado o compartido." FontSize="15" TextColor="#6E8CA0"/>
+             Title="Mis Raites">
 
-        <Frame BackgroundColor="White" CornerRadius="20" Padding="20" HasShadow="True" Margin="0,20,0,0">
-            <Label Text="Aún no tienes raites registrados." HorizontalOptions="Center"/>
-        </Frame>
-    </VerticalStackLayout>
+    <!-- Fondo con degradado -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Tus raites" 
+                   FontSize="26" FontAttributes="Bold"
+                   TextColor="#005BBB"/>
+
+            <!-- Ride 1 -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <Label Text="Sendero → Universidad (7:10 AM)" />
+            </Frame>
+
+            <!-- Ride 2 -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <Label Text="Pueblo Yaqui → UTS (6:50 AM)" />
+            </Frame>
+
+            <!-- Ride 3 -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <Label Text="Villa California → Instituto Tecnológico (8:00 AM)" />
+            </Frame>
+
+            <!-- Ride 4 -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <Label Text="Centro → Universidad (7:45 AM)" />
+            </Frame>
+
+            <!-- Ride 5 -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <Label Text="Real del Norte → Plaza Sendero (5:30 PM)" />
+            </Frame>
+
+            <!-- Ride 6 -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <Label Text="UTS → Pueblo Yaqui (2:00 PM)" />
+            </Frame>
+
+            <!-- Ride 7 -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <Label Text="Hacienda del Sol → Centro (9:20 AM)" />
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>

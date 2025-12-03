@@ -10,7 +10,7 @@ namespace Ride.MVVM.ViewModel
         {
             BuscarRaiteCommand = new Command(async () =>
             {
-                await Shell.Current.GoToAsync(nameof(PedirRide));
+                await Shell.Current.GoToAsync(nameof(View.PedirRide));
             });
         }
     }

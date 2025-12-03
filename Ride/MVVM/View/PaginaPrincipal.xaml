@@ -1,53 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Ride.MVVM.View.PaginaPrincipal"
-             Title="PaginaPrincipal">
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Ride.MVVM.View.PaginaPrincipal"
+    Title="Bienvenido">
 
-    <!-- 🌈 Fondo degradado -->
+    <!-- Fondo degradado suave -->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="Blue" Offset="0.0"/>
-            <GradientStop Color="White" Offset="1.0"/>
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <VerticalStackLayout Padding="25" Spacing="22">
+    <VerticalStackLayout Padding="30" Spacing="20"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">
 
-        <Label Text="Encuentra tu ride" 
-               FontSize="30" 
-               FontAttributes="Bold"
-               TextColor="White"/>
+        <Label Text="BIENVENID@S A RIDEUNI"
+           FontSize="40"
+           HorizontalOptions="Center"/>
 
-        <Label Text="Conecta con estudiantes que van hacia tu mismo destino."
-               FontSize="15" 
-               TextColor="White" />
+        <Button Text="Iniciar Sesión"
+            BackgroundColor="#2196F3"
+            TextColor="White"
+            Clicked="BtnLogin_Clicked"/>
 
-        <Button Text="Buscar Raite"
-                HeightRequest="45"
-                CornerRadius="20"
-                BackgroundColor="White"
-                TextColor="#005BBB"
-                Command="{Binding BuscarRaiteCommand}" />
-
-        <VerticalStackLayout Spacing="15" Margin="0,20,0,0">
-
-            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True" Opacity="0.95">
-                <VerticalStackLayout>
-                    <Label Text="Rápido y simple" FontAttributes="Bold" TextColor="#003B5E"/>
-                    <Label Text="Busca o comparte ride en segundos." TextColor="#6E8CA0"/>
-                </VerticalStackLayout>
-            </Frame>
-
-            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True" Opacity="0.95">
-                <VerticalStackLayout>
-                    <Label Text="Seguro" FontAttributes="Bold" TextColor="#003B5E"/>
-                    <Label Text="Todos los viajes verificados." TextColor="#6E8CA0"/>
-                </VerticalStackLayout>
-            </Frame>
-
-        </VerticalStackLayout>
-
+        <Button Text="Registrarse"
+            BackgroundColor="#4CAF50"
+            TextColor="White"
+            Clicked="BtnRegistro_Clicked"/>
     </VerticalStackLayout>
 
 </ContentPage>

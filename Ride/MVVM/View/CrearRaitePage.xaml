@@ -1,23 +1,30 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.CrearRaitePage"
              Title="Crear Raite">
 
+    <!-- Fondo con degradado -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="20">
 
-            <Label Text="Publica tu Viaje" 
+            <Label Text="Publica tu Viaje Aquí" 
                    FontSize="28" 
                    FontAttributes="Bold" 
                    HorizontalOptions="Center"
-                   TextColor="#38A98F"/>
+                   TextColor="Black"/>
 
             <Label Text="Punto de Origen" FontAttributes="Bold"/>
-            <Entry Placeholder="Introduce tu ubicación actual o punto de partida" 
+            <Entry Placeholder="Introduce tu ubicación actual " 
                    Text="{Binding Origen}" />
 
-            <Label Text="Destino Final" FontAttributes="Bold"/>
+            <Label Text="Destino" FontAttributes="Bold"/>
             <Entry Placeholder="¿A dónde vas?" Text="{Binding Destino}" />
 
             <Grid ColumnDefinitions="*,*">

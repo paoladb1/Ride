@@ -1,13 +1,10 @@
-
-namespace Ride
+namespace Ride.MVVM.View
 {
     public partial class PedirRide : ContentPage
     {
-        public PedirRide() { InitializeComponent(); }
-
-        private void InitializeComponent()
+        public PedirRide()
         {
-            throw new NotImplementedException();
+            InitializeComponent();
         }
     }
 }

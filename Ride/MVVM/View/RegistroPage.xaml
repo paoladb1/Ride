@@ -3,22 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.RegistroPage"
              Title="RegistroPage">
+
+    <!-- Fondo con degradado -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="20">
-            <Label Text="CREAR CUENTA" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+            <Label Text="CREAR CUENTA"
+                   FontSize="32" FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
             <Label Text="Nombre Completo" />
-            <Entry Placeholder="Ej: Ana María López" Text="{Binding NombreCompleto}"/>
+            <Entry Placeholder="Ej: Ana María López"
+                   Text="{Binding NombreCompleto}"/>
+
             <Label Text="Correo Electrónico" />
-            <Entry Placeholder="ejemplo@dominio.com" Keyboard="Email" Text="{Binding Correo}"/>
+            <Entry Placeholder="ejemplo@dominio.com"
+                   Keyboard="Email"
+                   Text="{Binding Correo}"/>
+
             <Label Text="Contraseña" />
-            <Entry Placeholder="Mínimo 8 caracteres" IsPassword="True" Text="{Binding Contraseña}"/>
+            <Entry Placeholder="Mínimo 8 caracteres"
+                   IsPassword="True"
+                   Text="{Binding Contraseña}"/>
+
             <Label Text="Selecciona tu Rol" FontAttributes="Bold"/>
+
             <Grid ColumnDefinitions="*,*">
-                <RadioButton Content="Conductor" GroupName="UserRole" IsChecked="{Binding IsConductor}" />
-                <RadioButton Grid.Column="1" Content="Solicitante" GroupName="UserRole" IsChecked="{Binding IsSolicitante}" />
+                <RadioButton Content="Conductor"
+                             GroupName="UserRole"
+                             IsChecked="{Binding IsConductor}" />
+
+                <RadioButton Grid.Column="1"
+                             Content="Solicitante"
+                             GroupName="UserRole"
+                             IsChecked="{Binding IsSolicitante}" />
             </Grid>
-            <Button Text="REGISTRARME" HeightRequest="55" Command="{Binding RegistrarCommand}" />
-            <Button Text="¿Ya tienes cuenta? Inicia sesión" BackgroundColor="Transparent" Command="{Binding IrALoginCommand}" />
+
+            <Button Text="REGISTRARME"
+                    HeightRequest="55"
+                    Command="{Binding RegistrarCommand}" />
+
+            <Button Text="¿Ya tienes cuenta? Inicia sesión"
+                    BackgroundColor="Transparent"
+                    Command="{Binding IrALoginCommand}" />
+
         </VerticalStackLayout>
     </ScrollView>
+
 </ContentPage>

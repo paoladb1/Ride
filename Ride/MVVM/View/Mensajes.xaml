@@ -1,27 +1,53 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Ride.MVVM.ViewModel"
              x:Class="Ride.MVVM.View.Mensajes"
-                Title="Mensajes">
-    <Grid RowDefinitions="Auto,*">
-    <SearchBar Grid.Row="0" Placeholder="Buscar en mensajes..." Margin="10,5" HeightRequest="45" BackgroundColor="#F0F0F0"/>
-    <CollectionView Grid.Row="1" ItemsSource="{Binding Conversations}">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Grid Padding="15,10" ColumnDefinitions="Auto,*,Auto">
-                    <Frame CornerRadius="30" WidthRequest="60" HeightRequest="60" Padding="0" IsClippedToBounds="True">
-                        <Image Source="{Binding AvatarUrl}" Aspect="AspectFill"/>
+             Title="Mensajes">
+
+    <ContentPage.BindingContext>
+        <vm:MensajesViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid RowDefinitions="*,Auto" Padding="15">
+
+        <!-- Lista de mensajes -->
+        <CollectionView ItemsSource="{Binding Mensajes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5" CornerRadius="15"
+                           BackgroundColor="#FFFFFF">
+                        <Label Text="{Binding}" />
                     </Frame>
-                    <StackLayout Grid.Column="1" VerticalOptions="Center">
-                        <Label Text="{Binding ContactName}" FontAttributes="Bold"/>
-                        <Label Text="{Binding LastMessage}" FontSize="14" TextColor="Blue" LineBreakMode="TailTruncation"/>
-                    </StackLayout>
-                    <StackLayout Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center">
-                        <Label Text="{Binding TimeAgo}" FontSize="12"/>
-                    </StackLayout>
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Caja de escribir -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Padding="0,10,0,0">
+
+            <Entry Grid.Column="0"
+                   Placeholder="Escribe un mensaje…"
+                   Text="{Binding MensajeNuevo}"
+                   HeightRequest="45"
+                   BackgroundColor="White"/>
+
+            <Button Grid.Column="1"
+                    Text="Enviar"
+                    Command="{Binding EnviarCommand}"
+                    BackgroundColor="#005BBB"
+                    TextColor="White"
+                    CornerRadius="20"
+                    WidthRequest="85"
+                    HeightRequest="45"/>
+        </Grid>
+
     </Grid>
+
 </ContentPage>

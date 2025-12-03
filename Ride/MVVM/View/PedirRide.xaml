@@ -2,16 +2,45 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.PedirRide"
-             Title="PedirRide">
-    
-    <VerticalStackLayout Padding="25" Spacing="22">
-        <Label Text="Pedir Raite" FontSize="30" FontAttributes="Bold" />
-        <Label Text="Aquí podrás pedir un ride indicando tu destino." FontSize="15" TextColor="#6E8CA0"/>
+             Title="Buscar Raite">
 
-        <Frame BackgroundColor="White" CornerRadius="20" Padding="20" HasShadow="True" Margin="0,20,0,0">
-            <VerticalStackLayout>
-                <Label Text="Formulario próximamente disponible." HorizontalOptions="Center"/>
-            </VerticalStackLayout>
+    <!-- Fondo con degradado -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Padding="25" Spacing="20">
+
+        <Label Text="Busca un ride" 
+               FontSize="26" 
+               FontAttributes="Bold" 
+               TextColor="#003F88" />
+
+        <Frame BackgroundColor="White"
+               CornerRadius="15"
+               Padding="10"
+               HasShadow="True">
+            <Entry Placeholder="Destino"
+                   BackgroundColor="Transparent" />
         </Frame>
+
+        <Frame BackgroundColor="White"
+               CornerRadius="15"
+               Padding="10"
+               HasShadow="True">
+            <Entry Placeholder="Hora aproximada"
+                   BackgroundColor="Transparent"/>
+        </Frame>
+
+        <Button Text="Buscar"
+                BackgroundColor="#005BBB"
+                TextColor="White"
+                HeightRequest="45"
+                CornerRadius="20"/>
+
     </VerticalStackLayout>
+
 </ContentPage>

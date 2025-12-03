@@ -1,4 +1,4 @@
-using Ride.MVVM.ViewModel;
+using Microsoft.Maui.Controls;
 
 namespace Ride.MVVM.View
 {
@@ -7,7 +7,17 @@ namespace Ride.MVVM.View
         public PaginaPrincipal()
         {
             InitializeComponent();
-            BindingContext = new PaginaPrincipalViewModel();
+        }
+
+     
+        private async void BtnLogin_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(LoginPage));
+        }
+
+        private async void BtnRegistro_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(CrearCuentaPage));
         }
     }
 }

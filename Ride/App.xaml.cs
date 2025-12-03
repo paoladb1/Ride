@@ -1,15 +1,15 @@
-﻿namespace Ride
+﻿using Microsoft.Maui.Controls;
+
+namespace Ride
 {
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
-        }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
+            // Se inicializa Shell directamente
+            MainPage = new AppShell();
         }
     }
 }

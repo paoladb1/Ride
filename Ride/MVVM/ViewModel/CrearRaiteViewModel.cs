@@ -1,4 +1,5 @@
 using Ride;
+using Ride.MVVM.View;
 using System.Windows.Input;
 
 namespace Ride;
@@ -13,6 +14,7 @@ public class CrearRaiteViewModel
     public decimal PrecioPorAsiento { get; set; }
 
     public ICommand PublicarCommand { get; }
+    public string HomePage { get; private set; }
 
     public CrearRaiteViewModel()
     {
@@ -30,4 +32,6 @@ public class CrearRaiteViewModel
         await Application.Current.MainPage.DisplayAlert("Éxito", "El raite ha sido publicado correctamente.", "OK");
         await Shell.Current.GoToAsync(nameof(HomePage));
     }
+
+  
 }

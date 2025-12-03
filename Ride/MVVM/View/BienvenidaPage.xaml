@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ride.MVVM.View.BienvenidaPage"
+             Title="Bienvenido">
+
+    <VerticalStackLayout Padding="30" Spacing="20"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+
+        <Label Text="¡Bienvenido a RideUni!"
+               FontSize="32"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#005BBB"/>
+
+        <Label x:Name="LblUsuario"
+               FontSize="20"
+               HorizontalOptions="Center"
+               TextColor="#333333"/>
+
+        <Button Text="Continuar"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                Clicked="BtnContinuar_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
