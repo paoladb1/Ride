@@ -3,6 +3,7 @@
              x:Class="Ride.MVVM.View.CrearRaitePage"
              Title="Crear Raite"
              NavigationPage.HasBackButton="False">
+
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A7C8FF" Offset="0.0"/>
@@ -13,51 +14,66 @@
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="20">
 
-            <Label Text="Publica tu Viaje Aquí" 
-               FontSize="28" 
-               FontAttributes="Bold" 
-               HorizontalOptions="Center"
-               TextColor="Black"/>
-
+            <Label Text="Publica tu Viaje Aqui" 
+                   FontSize="28" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"
+                   TextColor="Black"/>
 
             <Label Text="Punto de Origen" 
-               FontAttributes="Bold"
-               TextColor="Black"/>
+                   FontAttributes="Bold"
+                   TextColor="Black"/>
 
-            <Entry Placeholder="Ubicación actual " 
-               Text="{Binding Origen}" />
-
+            <!-- ORIGEN -->
+            <Entry Placeholder="Ubicacion actual"
+                   PlaceholderColor="Black"
+                   TextColor="Black"
+                   Text="{Binding Origen}" />
 
             <Label Text="Destino" 
-               FontAttributes="Bold"
-               TextColor="Black"/>
+                   FontAttributes="Bold"
+                   TextColor="Black"/>
 
-            <Entry Placeholder="¿A dónde vas?" 
-               Text="{Binding Destino}" />
+            <!-- DESTINO -->
+            <Entry Placeholder="A donde vas?" 
+                   PlaceholderColor="Black"
+                   TextColor="Black"
+                   Text="{Binding Destino}" />
 
+            <!-- FECHA Y HORA -->
             <Grid ColumnDefinitions="*,*">
-                <DatePicker Date="{Binding FechaSalida}" />
-                <TimePicker Time="{Binding HoraSalida}" Grid.Column="1"/>
+                <DatePicker Date="{Binding FechaSalida}"
+                            TextColor="Black" />
+
+                <TimePicker Time="{Binding HoraSalida}"
+                            TextColor="Black"
+                            Grid.Column="1"/>
             </Grid>
 
+            <!-- ASIENTOS Y PRECIO -->
             <Grid ColumnDefinitions="*,*">
+
                 <Entry Placeholder="Asientos (Ej: 3)" 
-                   Text="{Binding AsientosDisponibles}"
-                   Keyboard="Numeric"/>
+                       PlaceholderColor="Black"
+                       TextColor="Black"
+                       Text="{Binding AsientosDisponibles}"
+                       Keyboard="Numeric"/>
 
                 <Entry Placeholder="Precio por asiento (MXN)" 
-                   Text="{Binding PrecioPorAsiento}" 
-                   Keyboard="Numeric" 
-                   Grid.Column="1"/>
+                       PlaceholderColor="Black"
+                       TextColor="Black"
+                       Text="{Binding PrecioPorAsiento}" 
+                       Keyboard="Numeric" 
+                       Grid.Column="1"/>
             </Grid>
 
             <Button Text="Publicar Raite Ahora" 
-                HeightRequest="55" 
-                BackgroundColor="#005BBB"
-                TextColor="White"
-                FontAttributes="Bold"
-                CornerRadius="10"
-                Command="{Binding PublicarCommand}" />
+                    HeightRequest="55" 
+                    BackgroundColor="#1A73E8"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Command="{Binding PublicarCommand}" />
 
         </VerticalStackLayout>
     </ScrollView>

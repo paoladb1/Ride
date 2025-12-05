@@ -22,7 +22,7 @@
             <Label Text="Conductor: Carlos Mendez - 5:15 PM" />
         </Frame>
         <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-            <Label Text="Conductora: Ana López - 7:15 AM" />
+            <Label Text="Conductora: Ana Lopez - 7:15 AM" />
         </Frame>
         <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
             <Label Text="Conductor: Rodolfo - 1:00 PM" />

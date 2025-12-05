@@ -11,7 +11,6 @@
         </LinearGradientBrush>
     </ContentPage.Background>
 
-
     <Grid RowDefinitions="*,Auto">
 
         <ScrollView Grid.Row="0">
@@ -19,32 +18,32 @@
 
                 <Frame Padding="20" CornerRadius="15" BackgroundColor="White" HasShadow="True">
                     <VerticalStackLayout Spacing="10">
-                        <Label Text="Costo:Usted podra elegir si quiere brindiar dinero al conductor." 
-                           FontSize="25" FontAttributes="Bold" TextColor="Black"/>
-                        <Label Text="4 Asientos libres" FontSize="18" TextColor="Black"/>
+                        <Label Text="Costo: Usted podra elegir si quiere brindiar dinero al conductor." 
+                               FontSize="25" FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="2 Asientos Disponibles" FontSize="18" TextColor="Black"/>
                     </VerticalStackLayout>
                 </Frame>
 
                 <Frame Padding="15" CornerRadius="10" BackgroundColor="White" HasShadow="True">
                     <VerticalStackLayout Spacing="10">
-                        <Label Text="Origen: Pueblo yaqui" FontAttributes="Bold" FontSize="18"/>
-                        <Label Text="Destino: Uts " FontAttributes="Bold" FontSize="18"/>
+                        <Label Text="Origen: Pueblo yaqui" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+                        <Label Text="Destino: Uts " FontAttributes="Bold" FontSize="18" TextColor="Black"/>
                         <BoxView HeightRequest="1" Color="#EEEEEE"/>
-                        <Label Text="Fecha y hora: Hoy, 7:00 AM" FontSize="16"/>
-                        <Label Text="Llegada estimada: 8:15 AM" FontSize="16"/>
+                        <Label Text="Fecha y hora: Hoy, 7:00 AM" FontSize="16" TextColor="Black"/>
+                        <Label Text="Llegada estimada: 8:15 AM" FontSize="16" TextColor="Black"/>
                     </VerticalStackLayout>
                 </Frame>
 
                 <Frame Padding="15" CornerRadius="10" BackgroundColor="White" HasShadow="True">
                     <Grid ColumnDefinitions="Auto,*">
                         <BoxView WidthRequest="50" HeightRequest="50" 
-                             Color="#CCCCCC" Margin="0,0,15,0"/>
+                                 Color="#CCCCCC" Margin="0,0,15,0"/>
 
                         <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
                             <Label Text="Conductora Pamela Lopez" 
-                               FontAttributes="Bold" TextColor="Black"/>
+                                   FontAttributes="Bold" TextColor="Black"/>
                             <Label Text=" 4.8 Estrellas de 25 viajes"
-                               FontSize="14" TextColor="Black"/>
+                                   FontSize="14" TextColor="Black"/>
                         </VerticalStackLayout>
                     </Grid>
 
@@ -56,7 +55,7 @@
                 <Frame Padding="15" CornerRadius="10" BackgroundColor="White" HasShadow="True">
                     <VerticalStackLayout Spacing="10">
                         <Label Text="Pasajeros Confirmados (2)" 
-                           FontAttributes="Bold" FontSize="18"/>
+                               FontAttributes="Bold" FontSize="18" TextColor="Black"/>
 
                         <HorizontalStackLayout Spacing="10">
                             <BoxView WidthRequest="40" HeightRequest="40" Color="#CCC"/>
@@ -70,14 +69,13 @@
 
         <Grid Grid.Row="1" Padding="20,10,20,20" BackgroundColor="White">
             <Button Text="Solicitar Raite" 
-                HeightRequest="55" 
-                CornerRadius="12"
-                BackgroundColor="Blue"
-                TextColor="White"
-                Command="{Binding SolicitarRaiteCommand}" />
+                    HeightRequest="55" 
+                    CornerRadius="12"
+                    BackgroundColor="#003B9A"
+                    TextColor="White"
+                    Command="{Binding SolicitarRaiteCommand}" />
         </Grid>
 
     </Grid>
-
 
 </ContentPage>

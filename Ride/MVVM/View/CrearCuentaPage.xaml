@@ -10,9 +10,9 @@
                HorizontalOptions="Center" />
 
             <Entry x:Name="EntryNombre" Placeholder="Nombre" />
-            <Entry x:Name="EntryEmail" Placeholder="Correo electrónico" Keyboard="Email"/>
-            <Entry x:Name="EntryPassword" Placeholder="Contraseña" IsPassword="True"/>
-            <Entry x:Name="EntryConfirmPassword" Placeholder="Confirmar Contraseña" IsPassword="True"/>
+            <Entry x:Name="EntryEmail" Placeholder="Correo electronico" Keyboard="Email"/>
+            <Entry x:Name="EntryPassword" Placeholder="Contrasena" IsPassword="True"/>
+            <Entry x:Name="EntryConfirmPassword" Placeholder="Confirmar Contrasena" IsPassword="True"/>
 
             <Button Text="Crear Cuenta"
                 BackgroundColor="#2196F3"

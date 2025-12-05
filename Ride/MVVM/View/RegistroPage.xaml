@@ -22,13 +22,13 @@
             <Entry Placeholder="Ej: Ana María López"
                 Text="{Binding NombreCompleto}"/>
 
-            <Label Text="Correo Electrónico" />
+            <Label Text="Correo Electronico" />
             <Entry Placeholder="ejemplo@dominio.com"
                 Keyboard="Email"
                 Text="{Binding Correo}"/>
 
             <Label Text="Contraseña" />
-            <Entry Placeholder="Mínimo 8 caracteres"
+            <Entry Placeholder="Minimo 8 caracteres"
                 IsPassword="True"
                 Text="{Binding Contraseña}"/>
 
@@ -49,7 +49,7 @@
                  HeightRequest="55"
                  Command="{Binding RegistrarCommand}" />
 
-            <Button Text="¿Ya tienes cuenta? Inicia sesión"
+            <Button Text="¿Ya tienes cuenta? Inicia sesion"
                  BackgroundColor="Transparent"
                  Command="{Binding IrALoginCommand}" />
 

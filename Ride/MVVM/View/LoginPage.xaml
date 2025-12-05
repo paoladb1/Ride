@@ -3,12 +3,12 @@
              x:Class="Ride.MVVM.View.LoginPage">
 
     <VerticalStackLayout Padding="20" Spacing="15">
-        <Label Text="Iniciar Sesión"
+        <Label Text="Iniciar Sesion"
             FontSize="24"
             HorizontalOptions="Center"/>
 
-        <Entry x:Name="EntryEmail" Placeholder="Correo electrónico" Keyboard="Email"/>
-        <Entry x:Name="EntryPassword" Placeholder="Contraseña" IsPassword="True"/>
+        <Entry x:Name="EntryEmail" Placeholder="Correo electronico" Keyboard="Email"/>
+        <Entry x:Name="EntryPassword" Placeholder="Contrasena" IsPassword="True"/>
 
         <Button Text="Entrar"
              BackgroundColor="#2196F3"

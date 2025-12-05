@@ -4,7 +4,6 @@
              Title="Inicio Ride"
              NavigationPage.HasBackButton="False">
 
-    <!-- FONDO CON DEGRADADO AZUL -->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A7C8FF" Offset="0.0"/>
@@ -15,7 +14,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="25" Spacing="25">
 
-            <Label Text="¡Bienvenido a RideUni!"
+            <Label Text="Bienvenid@s a RideUni!"
                 FontSize="28"
                 FontAttributes="Bold"
                 TextColor="Black"
@@ -31,7 +30,7 @@
                 CornerRadius="15"
                 Padding="15"
                 HasShadow="True">
-                <Label Text="Sendero ? Uts (7:10 AM)"
+                <Label Text="Sendero - Uts (7:10 AM)"
                     TextColor="Black"
                     FontSize="18"/>
             </Frame>
@@ -41,13 +40,13 @@
                 CornerRadius="15"
                 Padding="15"
                 HasShadow="True">
-                <Label Text="Mercado ? Itson (11:00 AM)"
+                <Label Text="Mercado - Itson (11:00 AM)"
                     TextColor="Black"
                     FontSize="18"/>
             </Frame>
 
 
-            <Button Text="Ver más Raites"
+            <Button Text="Ver mas Raites"
                  BackgroundColor="#005BBB"
                  TextColor="White"
                  FontAttributes="Bold"
