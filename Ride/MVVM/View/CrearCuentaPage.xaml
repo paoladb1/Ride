@@ -1,25 +1,42 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.CrearCuentaPage"
-             Title="Crear Cuenta">
+             Title="Crear Cuenta"
+             NavigationPage.HasBackButton="False">
+
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#A7C8FF"/>
+            <GradientStop Color="#E3F0FF" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
+        <VerticalStackLayout Spacing="25" Padding="35">
 
-            <Label Text="Crear Cuenta" 
-                   FontSize="24" 
-                   HorizontalOptions="Center" />
+            <Label Text="Registrate"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
 
-            <Entry x:Name="EntryNombre" Placeholder="Nombre" />
-            <Entry x:Name="EntryEmail" Placeholder="Correo electrónico" Keyboard="Email"/>
-            <Entry x:Name="EntryPassword" Placeholder="Contraseña" IsPassword="True"/>
-            <Entry x:Name="EntryConfirmPassword" Placeholder="Confirmar Contraseña" IsPassword="True"/>
+            <Frame Padding="20" BackgroundColor="White" CornerRadius="25">
+                <VerticalStackLayout Spacing="15">
 
-            <Button Text="Crear Cuenta"
-                    BackgroundColor="#2196F3"
-                    TextColor="White"
-                    Clicked="OnCrearCuentaClicked"/>
+                    <Entry Placeholder="Nombre Completo"/>
+                    <Entry Placeholder="Correo" Keyboard="Email"/>
+                    <Entry Placeholder="Contrasena" IsPassword="True"/>
+                    <Entry Placeholder="Confirmar Contrasena" IsPassword="True"/>
+
+                    <Button Text="Crear cuenta"
+                            BackgroundColor="#3F6FFF"
+                            TextColor="White"
+                            CornerRadius="18"
+                            Clicked="Crear_Clicked"/>
+
+                </VerticalStackLayout>
+            </Frame>
+
         </VerticalStackLayout>
     </ScrollView>
+
 </ContentPage>

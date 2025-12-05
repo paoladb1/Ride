@@ -1,35 +1,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.Mensajes"
-             Title="Mensajes"
-             NavigationPage.HasBackButton="False">
+             Title="Mensajes">
 
     <ContentPage.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush>
             <GradientStop Color="#A7C8FF"/>
             <GradientStop Color="#E3F0FF" Offset="1"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <Grid RowDefinitions="Auto,*" Padding="18">
+    <Grid RowDefinitions="Auto,*" Padding="20">
 
         <ImageButton Source="back.png"
                      BackgroundColor="Transparent"
-                     WidthRequest="32" HeightRequest="32"
-                     Clicked="BtnBack_Clicked"/>
+                     WidthRequest="32"
+                     HeightRequest="32"
+                     Clicked="Back_Clicked"/>
 
         <ScrollView Grid.Row="1">
+
             <VerticalStackLayout Spacing="20">
-                <Label Text="Tus Mensajes"
+
+                <Label Text="Tus mensajes"
                        FontSize="26"
                        FontAttributes="Bold"/>
 
-                <Frame Padding="15" CornerRadius="15" BackgroundColor="White">
+                <Frame BackgroundColor="White" CornerRadius="20" Padding="20">
                     <Label Text="No tienes mensajes nuevos."
                            FontSize="18"/>
                 </Frame>
 
             </VerticalStackLayout>
+
         </ScrollView>
 
     </Grid>

@@ -29,15 +29,16 @@
                                FontSize="26"
                                FontAttributes="Bold"/>
 
-                        <Entry Placeholder="Origen"/>
-                        <Entry Placeholder="Destino"/>
-                        <Entry Placeholder="Horario"/>
-                        <Entry Placeholder="Asientos"/>
+                        <Entry x:Name="entryOrigen" Placeholder="Origen"/>
+                        <Entry x:Name="entryDestino" Placeholder="Destino"/>
+                        <Entry x:Name="entryHorario" Placeholder="Horario"/>
+                        <Entry x:Name="entryAsientos" Placeholder="Asientos" Keyboard="Numeric"/>
 
                         <Button Text="Publicar"
                                 BackgroundColor="#3F6FFF"
                                 TextColor="White"
-                                CornerRadius="15"/>
+                                CornerRadius="15"
+                                Clicked="Publicar_Clicked"/>
                     </VerticalStackLayout>
                 </Frame>
 

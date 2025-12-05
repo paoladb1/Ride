@@ -6,7 +6,6 @@
     xmlns:views="clr-namespace:Ride.MVVM.View"
     Title="Ride">
 
-    <!-- Menú hamburguesa -->
     <FlyoutItem Title="Inicio">
         <ShellContent Route="PaginaPrincipal"
                       ContentTemplate="{DataTemplate views:PaginaPrincipal}" />
@@ -42,7 +41,7 @@
                       ContentTemplate="{DataTemplate views:CrearRaitePage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Detalle Raite">
+    <FlyoutItem Title="Detalle del Raite">
         <ShellContent Route="DetalleRaitePage"
                       ContentTemplate="{DataTemplate views:DetalleRaitePage}" />
     </FlyoutItem>

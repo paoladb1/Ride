@@ -1,5 +1,3 @@
-using Microsoft.Maui.Controls;
-
 namespace Ride.MVVM.View
 {
     public partial class LoginPage : ContentPage
@@ -9,20 +7,14 @@ namespace Ride.MVVM.View
             InitializeComponent();
         }
 
-        private async void OnLoginClicked(object sender, EventArgs e)
+        private async void Iniciar_Clicked(object sender, EventArgs e)
         {
-            string email = EntryEmail.Text;
-            string password = EntryPassword.Text;
+            await Shell.Current.GoToAsync(nameof(PaginaPrincipal));
+        }
 
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
-            {
-                await DisplayAlert("Error", "Llena todos los campos.", "OK");
-                return;
-            }
-
-            
-            var bienvenidaPage = new BienvenidaPage(email);
-            await Navigation.PushAsync(bienvenidaPage);
+        private async void CrearCuenta_Tapped(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(CrearCuentaPage));
         }
     }
 }
