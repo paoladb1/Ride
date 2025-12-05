@@ -1,5 +1,3 @@
-using Ride;
-
 namespace Ride.MVVM.View
 {
     public partial class CrearRaitePage : ContentPage
@@ -7,7 +5,11 @@ namespace Ride.MVVM.View
         public CrearRaitePage()
         {
             InitializeComponent();
-            BindingContext = new CrearRaiteViewModel();
+        }
+
+        private async void BtnBack_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("..");
         }
     }
 }

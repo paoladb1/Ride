@@ -8,9 +8,7 @@ namespace Ride
         {
             InitializeComponent();
 
-            // Registrar rutas (UNA VEZ)
-            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
-            Routing.RegisterRoute(nameof(CrearCuentaPage), typeof(CrearCuentaPage));
+            // Registro de todas las rutas Shell
             Routing.RegisterRoute(nameof(PaginaPrincipal), typeof(PaginaPrincipal));
             Routing.RegisterRoute(nameof(PedirRide), typeof(PedirRide));
             Routing.RegisterRoute(nameof(Perfil), typeof(Perfil));

@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.PedirRide"
-             Title="Buscar Raite">
+             NavigationPage.HasBackButton="False"
+             Title="Pedir Ride">
 
-    
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A7C8FF" Offset="0.0"/>
@@ -12,35 +11,41 @@
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <VerticalStackLayout Padding="25" Spacing="20">
+    <Grid RowDefinitions="Auto,*" Padding="18">
 
-        <Label Text="Busca un ride" 
-               FontSize="26" 
-               FontAttributes="Bold" 
-               TextColor="#003F88" />
+        <!-- Flecha regresar -->
+        <ImageButton Source="back.png"
+                     Grid.Row="0"
+                     WidthRequest="32"
+                     HeightRequest="32"
+                     BackgroundColor="Transparent"
+                     Clicked="BtnBack_Clicked"/>
 
-        <Frame BackgroundColor="White"
-               CornerRadius="15"
-               Padding="10"
-               HasShadow="True">
-            <Entry Placeholder="Destino"
-                   BackgroundColor="Transparent" />
-        </Frame>
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20">
 
-        <Frame BackgroundColor="White"
-               CornerRadius="15"
-               Padding="10"
-               HasShadow="True">
-            <Entry Placeholder="Hora aproximada"
-                   BackgroundColor="Transparent"/>
-        </Frame>
+                <Label Text="Rides disponibles"
+                       FontSize="26" FontAttributes="Bold"
+                       TextColor="Black"/>
 
-        <Button Text="Buscar"
-                BackgroundColor="#005BBB"
-                TextColor="White"
-                HeightRequest="45"
-                CornerRadius="20"/>
+                <!-- Ride ejemplo -->
+                <Frame Padding="20" CornerRadius="20" BackgroundColor="White">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Pueblo Yaqui ➝ UTS" FontSize="20" FontAttributes="Bold"/>
+                        <Label Text="Salida: Hoy 7:00 AM" FontSize="16"/>
+                        <Label Text="Asientos disponibles: 3" FontSize="16"/>
 
-    </VerticalStackLayout>
+                        <Button Text="Ver Detalle"
+                                BackgroundColor="#3F6FFF"
+                                TextColor="White"
+                                CornerRadius="15"
+                                Clicked="IrADetalle"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
 
 </ContentPage>

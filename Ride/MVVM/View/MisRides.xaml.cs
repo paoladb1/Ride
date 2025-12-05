@@ -6,5 +6,10 @@ namespace Ride.MVVM.View
         {
             InitializeComponent();
         }
+
+        private async void BtnBack_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("..");
+        }
     }
 }

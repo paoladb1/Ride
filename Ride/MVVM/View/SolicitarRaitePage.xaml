@@ -1,38 +1,45 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.SolicitarRaitePage"
-             Title="Solicitar Raite">
+             Title="Solicitar Raite"
+             NavigationPage.HasBackButton="False">
 
-    <!-- Fondo con degradado -->
     <ContentPage.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="#A7C8FF" Offset="0.0"/>
-            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        <LinearGradientBrush>
+            <GradientStop Color="#A7C8FF"/>
+            <GradientStop Color="#E3F0FF" Offset="1"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <VerticalStackLayout Padding="25" Spacing="20">
+    <Grid RowDefinitions="Auto,*" Padding="18">
 
-        <Label Text="Opciones de Raites Disponibles" 
-               FontSize="26" 
-               FontAttributes="Bold" 
-               TextColor="#005BBB"/>
+        <ImageButton Source="back.png"
+                     HeightRequest="32"
+                     WidthRequest="32"
+                     BackgroundColor="Transparent"
+                     Clicked="BtnBack_Clicked"/>
 
-        <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-        <Label Text="Conductor: Carlos Mendez - 5:15 PM" />
-        </Frame>
-        <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-        <Label Text="Conductora: Ana López - 7:15 AM" />
-        </Frame>
-        <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-            <Label Text="Conductor: Rodolfo - 1:00 PM" />
-        </Frame>
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20">
 
-        <Button Text="Solicitar Ride"
-                BackgroundColor="#005BBB"
-                TextColor="White"
-                CornerRadius="12"
-                HeightRequest="50" />
+                <Frame BackgroundColor="White" CornerRadius="20" Padding="20">
+                    <VerticalStackLayout Spacing="10">
 
-    </VerticalStackLayout>
+                        <Label Text="Confirmar Ride"
+                               FontSize="26" FontAttributes="Bold"/>
+
+                        <Label Text="Tu solicitud fue enviada."
+                               FontSize="18"/>
+
+                        <Button Text="Volver al inicio"
+                                CornerRadius="15"
+                                BackgroundColor="#3F6FFF"
+                                TextColor="White"
+                                Clicked="IrAHome"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
 </ContentPage>

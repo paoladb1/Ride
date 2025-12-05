@@ -1,5 +1,3 @@
-using Microsoft.Maui.Controls;
-
 namespace Ride.MVVM.View
 {
     public partial class HomePage : ContentPage
@@ -9,10 +7,19 @@ namespace Ride.MVVM.View
             InitializeComponent();
         }
 
-        private async void BtnVerRaites_Clicked(object sender, EventArgs e)
+        private async void BtnBack_Clicked(object sender, EventArgs e)
         {
-            // Navegar a la página PedirRide (debes tenerla creada)
+            await Shell.Current.GoToAsync("..");
+        }
+
+        private async void IrAPedirRide(object sender, EventArgs e)
+        {
             await Shell.Current.GoToAsync(nameof(PedirRide));
+        }
+
+        private async void IrACrear(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(CrearRaitePage));
         }
     }
 }

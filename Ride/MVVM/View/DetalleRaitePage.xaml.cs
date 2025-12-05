@@ -10,9 +10,16 @@ namespace Ride.MVVM.View
             BindingContext = new DetalleRaiteViewModel();
         }
 
+        private async void BtnBack_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(".."); // Regresar
+        }
+
         private async void ConductorInfo_Tapped(object sender, TappedEventArgs e)
         {
-            await DisplayAlert("Conductor", "Aquí puedes mostrar más información del conductor.", "OK");
+            await DisplayAlert("Conductor",
+                               "Aqui puedes mostrar mas informacion del conductor.",
+                               "OK");
         }
     }
 }
