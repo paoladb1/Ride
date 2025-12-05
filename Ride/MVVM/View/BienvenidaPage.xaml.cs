@@ -8,14 +8,13 @@ namespace Ride.MVVM.View
         {
             InitializeComponent();
 
-            // Mostrar nombre del usuario recibido
             LblUsuario.Text = $"Hola, {usuario}!";
         }
 
         private async void BtnContinuar_Clicked(object sender, EventArgs e)
         {
-            // Navegar directamente a PedirRide
-            await Shell.Current.GoToAsync(nameof(PedirRide));
+            // Ir a HomePage
+            await Shell.Current.GoToAsync(nameof(HomePage));
         }
     }
 }

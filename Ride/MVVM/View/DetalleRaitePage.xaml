@@ -10,9 +10,7 @@
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <!-- TODO EL CONTENIDO IGUAL QUE LO ENVIADO -->
-    <!-- Solo cambié el degradado y limpié la estructura -->
-
+   
     <Grid RowDefinitions="*,Auto">
 
         <ScrollView Grid.Row="0">

@@ -17,7 +17,7 @@
 
     <Grid RowDefinitions="*,Auto" Padding="15">
 
-        <!-- Lista de mensajes -->
+       
         <CollectionView ItemsSource="{Binding Mensajes}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -29,7 +29,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <!-- Caja de escribir -->
+       
         <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Padding="0,10,0,0">
 
             <Entry Grid.Column="0"

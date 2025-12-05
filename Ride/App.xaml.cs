@@ -8,7 +8,7 @@ namespace Ride
         {
             InitializeComponent();
 
-            // Se inicializa Shell directamente
+            
             MainPage = new AppShell();
         }
     }

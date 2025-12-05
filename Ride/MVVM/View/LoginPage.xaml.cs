@@ -20,7 +20,7 @@ namespace Ride.MVVM.View
                 return;
             }
 
-            // Navegar a BienvenidaPage pasando el email
+            
             var bienvenidaPage = new BienvenidaPage(email);
             await Navigation.PushAsync(bienvenidaPage);
         }

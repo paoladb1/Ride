@@ -4,7 +4,6 @@
              x:Class="Ride.MVVM.View.Perfil"
              Title="Perfil">
 
-    <!-- Fondo degradado suave -->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#9CC4FF" Offset="0.0"/>
@@ -15,18 +14,18 @@
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="25">
 
-            <!-- Título -->
+           
             <Label Text="Mi Perfil"
                    FontSize="32"
                    HorizontalOptions="Center"
                    FontAttributes="Bold"
                    TextColor="#003E7E"/>
 
-            <!-- Tarjeta de perfil -->
+           
             <Frame CornerRadius="30" Padding="25" BackgroundColor="White" HasShadow="True">
                 <VerticalStackLayout Spacing="18" HorizontalOptions="Center">
 
-                    <!-- Foto redonda -->
+                    
                     <Frame WidthRequest="130" HeightRequest="130" CornerRadius="65"
                            BackgroundColor="#0077CC" 
                            Padding="3"
@@ -34,7 +33,7 @@
                         <Image Source="perfil.png" Aspect="AspectFill" />
                     </Frame>
 
-                    <!-- Nombre y rol -->
+                    
                     <Label Text="Andrea López"
                            FontSize="22"
                            FontAttributes="Bold"
@@ -46,10 +45,10 @@
                            TextColor="#6A7C8B"
                            HorizontalOptions="Center"/>
 
-                    <!-- Divider -->
+                    
                     <BoxView HeightRequest="1" Color="#DDDDDD" Margin="0,10"/>
 
-                    <!-- Información -->
+                    
                     <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" ColumnSpacing="10" RowSpacing="10">
 
                         <Label Text="Universidad:" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
@@ -66,7 +65,7 @@
                 </VerticalStackLayout>
             </Frame>
 
-            <!-- Otra caja de información opcional -->
+          
             <Frame CornerRadius="20" Padding="20" BackgroundColor="White" HasShadow="True">
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Información" FontAttributes="Bold" FontSize="18" TextColor="#003E7E"/>
@@ -76,7 +75,7 @@
                 </VerticalStackLayout>
             </Frame>
 
-            <!-- Botón de edición -->
+           
             <Button Text="Editar Perfil"
                     HeightRequest="48"
                     CornerRadius="15"

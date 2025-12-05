@@ -7,15 +7,11 @@ namespace Ride
         public AppShell()
         {
             InitializeComponent();
-            // Registrar rutas para navegación Shell
-            Routing.RegisterRoute(nameof(PaginaPrincipal), typeof(PaginaPrincipal));
+
+            // Registrar rutas (UNA VEZ)
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             Routing.RegisterRoute(nameof(CrearCuentaPage), typeof(CrearCuentaPage));
-            Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
-            // Registro de rutas para navegación Shell
             Routing.RegisterRoute(nameof(PaginaPrincipal), typeof(PaginaPrincipal));
-            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
-            Routing.RegisterRoute(nameof(CrearCuentaPage), typeof(CrearCuentaPage));
             Routing.RegisterRoute(nameof(PedirRide), typeof(PedirRide));
             Routing.RegisterRoute(nameof(Perfil), typeof(Perfil));
             Routing.RegisterRoute(nameof(MisRides), typeof(MisRides));

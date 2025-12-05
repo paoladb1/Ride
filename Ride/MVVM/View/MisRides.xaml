@@ -4,7 +4,7 @@
              x:Class="Ride.MVVM.View.MisRides"
              Title="Mis Raites">
 
-    <!-- Fondo con degradado -->
+   
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A7C8FF" Offset="0.0"/>
@@ -19,37 +19,37 @@
                    FontSize="26" FontAttributes="Bold"
                    TextColor="#005BBB"/>
 
-            <!-- Ride 1 -->
+           
             <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
                 <Label Text="Sendero → Universidad (7:10 AM)" />
             </Frame>
 
-            <!-- Ride 2 -->
+           
             <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
                 <Label Text="Pueblo Yaqui → UTS (6:50 AM)" />
             </Frame>
 
-            <!-- Ride 3 -->
+          
             <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
                 <Label Text="Villa California → Instituto Tecnológico (8:00 AM)" />
             </Frame>
 
-            <!-- Ride 4 -->
+            
             <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
                 <Label Text="Centro → Universidad (7:45 AM)" />
             </Frame>
 
-            <!-- Ride 5 -->
+           
             <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
                 <Label Text="Real del Norte → Plaza Sendero (5:30 PM)" />
             </Frame>
 
-            <!-- Ride 6 -->
+            
             <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
                 <Label Text="UTS → Pueblo Yaqui (2:00 PM)" />
             </Frame>
 
-            <!-- Ride 7 -->
+           
             <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
                 <Label Text="Hacienda del Sol → Centro (9:20 AM)" />
             </Frame>

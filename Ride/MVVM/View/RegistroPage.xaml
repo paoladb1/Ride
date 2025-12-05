@@ -4,7 +4,7 @@
              x:Class="Ride.MVVM.View.RegistroPage"
              Title="RegistroPage">
 
-    <!-- Fondo con degradado -->
+  
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A7C8FF" Offset="0.0"/>

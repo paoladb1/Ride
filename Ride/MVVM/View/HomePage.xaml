@@ -18,7 +18,7 @@
                    FontAttributes="Bold"
                    TextColor="#005BBB"/>
 
-            <!-- Ejemplo de raites -->
+           
             <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
                 <Label Text="Sendero → Uts (7:10 AM)" />
             </Frame>
@@ -26,7 +26,7 @@
                 <Label Text="Mercado → Itson (11:00 AM)" />
             </Frame>
 
-            <!-- Botón para ir a otra página de Raites -->
+            
             <Button Text="Ver más Raites"
                     BackgroundColor="#4CAF50"
                     TextColor="White"
