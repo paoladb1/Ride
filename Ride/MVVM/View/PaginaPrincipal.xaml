@@ -1,10 +1,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.PaginaPrincipal"
-             NavigationPage.HasBackButton="False"
-             Title="Inicio">
+             Title="Bienvenido">
 
-    <!-- Fondo con gradiente -->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A7C8FF" Offset="0.0"/>
@@ -12,95 +10,22 @@
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <Grid RowDefinitions="Auto,*" Padding="18">
-
-        <!-- Titulo + Flecha -->
-        <HorizontalStackLayout Grid.Row="0" Margin="0,10">
-            <ImageButton Source="menu.png"
-                         WidthRequest="32"
-                         HeightRequest="32"
-                         BackgroundColor="Transparent"
-                         Command="{Binding OpenMenuCommand}" />
-
-            <Label Text="Bienvenido a Ride"
-                   FontSize="26"
-                   FontAttributes="Bold"
+    <VerticalStackLayout Padding="30" Spacing="20"
                    VerticalOptions="Center"
-                   Margin="15,0,0,0"/>
-        </HorizontalStackLayout>
+                   HorizontalOptions="Center">
 
-        <!-- CONTENIDO PRINCIPAL -->
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout Spacing="20" Padding="0,20">
+        <Label Text="BIENVENID@S A RIDEUNI"
+         FontSize="40"
+         HorizontalOptions="Center"/>
 
-                <!-- Tarjeta 1: Pedir Ride -->
-                <Frame BackgroundColor="White"
-                       Padding="20"
-                       CornerRadius="20"
-                       HasShadow="True">
-                    <VerticalStackLayout Spacing="8">
-                        <Label Text="Pedir Ride"
-                               FontSize="22"
-                               FontAttributes="Bold"
-                               TextColor="Black"/>
+        <Button Text="Iniciar Sesión"
+          BackgroundColor="#2196F3"
+          TextColor="White"
+          Clicked="BtnLogin_Clicked"/>
 
-                        <Label Text="Busca un ride disponible cerca de ti."
-                               FontSize="16"/>
-
-                        <Button Text="Ir a Pedir Ride"
-                                CornerRadius="12"
-                                BackgroundColor="#3F6FFF"
-                                TextColor="White"
-                                Clicked="IrAPedirRide"/>
-                    </VerticalStackLayout>
-                </Frame>
-
-                <!-- Tarjeta 2: Crear Ride -->
-                <Frame BackgroundColor="White"
-                       Padding="20"
-                       CornerRadius="20"
-                       HasShadow="True">
-                    <VerticalStackLayout Spacing="8">
-                        <Label Text="Crear Ride"
-                               FontSize="22"
-                               FontAttributes="Bold"
-                               TextColor="Black"/>
-
-                        <Label Text="Publica un ride para otros pasajeros."
-                               FontSize="16"/>
-
-                        <Button Text="Crear Ride"
-                                CornerRadius="12"
-                                BackgroundColor="#3F6FFF"
-                                TextColor="White"
-                                Clicked="IrACrearRide"/>
-                    </VerticalStackLayout>
-                </Frame>
-
-                <!-- Tarjeta 3: Mis Rides -->
-                <Frame BackgroundColor="White"
-                       Padding="20"
-                       CornerRadius="20"
-                       HasShadow="True">
-                    <VerticalStackLayout Spacing="8">
-                        <Label Text="Mis Rides"
-                               FontSize="22"
-                               FontAttributes="Bold"/>
-
-                        <Label Text="Consulta los rides creados o solicitados."
-                               FontSize="16"/>
-
-                        <Button Text="Ver Mis Rides"
-                                CornerRadius="12"
-                                BackgroundColor="#3F6FFF"
-                                TextColor="White"
-                                Clicked="IrAMisRides"/>
-                    </VerticalStackLayout>
-                </Frame>
-
-            </VerticalStackLayout>
-        </ScrollView>
-
-    </Grid>
-
+        <Button Text="Registrarse"
+          BackgroundColor="#4CAF50"
+          TextColor="White"
+          Clicked="BtnRegistro_Clicked"/>
+    </VerticalStackLayout>
 </ContentPage>

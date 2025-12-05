@@ -6,42 +6,85 @@
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="#A7C8FF"/>
-            <GradientStop Color="#E3F0FF" Offset="1"/>
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <Grid Padding="18" RowDefinitions="Auto,*">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
 
-        <ImageButton Source="back.png"
-                     HeightRequest="32" WidthRequest="32"
-                     BackgroundColor="Transparent"
-                     Clicked="BtnBack_Clicked"/>
+            <Label Text="Tus raites" 
+               FontSize="26" FontAttributes="Bold"
+               TextColor="#005BBB"/>
 
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout Spacing="20">
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="Sendero ? Universidad (7:10 AM)" />
 
-                <Label Text="Tus Rides"
-                       FontSize="26"
-                       FontAttributes="Bold"/>
+                    <Button Text="Eliminar"
+                        BackgroundColor="#005BBB"
+                        TextColor="White"
+                        CornerRadius="8"
+                        HeightRequest="35"
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        Margin="0,10,0,0"
+                        Clicked="EliminarRaite_Clicked"/>
+                </VerticalStackLayout>
+            </Frame>
 
-                <!-- Ride 1 -->
-                <Frame BackgroundColor="White"
-                       CornerRadius="20"
-                       Padding="20">
-                    <VerticalStackLayout>
-                        <Label Text="Creados por ti" FontAttributes="Bold" FontSize="20"/>
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="Pueblo Yaqui ? UTS (6:50 AM)" />
 
-                        <Button Text="Ver Ride"
-                                BackgroundColor="#3F6FFF"
-                                TextColor="White"
-                                CornerRadius="15"/>
-                    </VerticalStackLayout>
-                </Frame>
+                    <Button Text="Eliminar"
+                        BackgroundColor="#005BBB"
+                        TextColor="White"
+                        CornerRadius="8"
+                        HeightRequest="35"
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        Margin="0,10,0,0"
+                        Clicked="EliminarRaite_Clicked"/>
+                </VerticalStackLayout>
+            </Frame>
 
-            </VerticalStackLayout>
-        </ScrollView>
 
-    </Grid>
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="Villa California ? Instituto Tecnológico (8:00 AM)" />
 
+                    <Button Text="Eliminar"
+                        BackgroundColor="#005BBB"
+                        TextColor="White"
+                        CornerRadius="8"
+                        HeightRequest="35"
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        Margin="0,10,0,0"
+                        Clicked="EliminarRaite_Clicked"/>
+                </VerticalStackLayout>
+            </Frame>
+
+
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="Centro ? Universidad (7:45 AM)" />
+
+                    <Button Text="Eliminar"
+                        BackgroundColor="#005BBB"
+                        TextColor="White"
+                        
+                        CornerRadius="8"
+                        HeightRequest="35"
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        Margin="0,10,0,0"
+                        Clicked="EliminarRaite_Clicked"/>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

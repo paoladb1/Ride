@@ -1,27 +1,53 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.BienvenidaPage"
              Title="Bienvenido">
 
-    <VerticalStackLayout Padding="30" Spacing="20"
-                         VerticalOptions="Center"
-                         HorizontalOptions="Center">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
 
-        <Label Text="¡Bienvenido a RideUni!"
-               FontSize="32"
+    <VerticalStackLayout Padding="30" Spacing="25"
+                     VerticalOptions="Start"
+                     HorizontalOptions="Center">
+
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="3">
+            <Label Text="🚗 RideUni"
+               FontSize="40"
                FontAttributes="Bold"
                HorizontalOptions="Center"
                TextColor="#005BBB"/>
 
-        <Label x:Name="LblUsuario"
-               FontSize="20"
+            <Label Text="Tu viaje empieza aquí"
+               FontSize="18"
                HorizontalOptions="Center"
-               TextColor="#333333"/>
+               TextColor="#444"/>
+        </VerticalStackLayout>
+
+        <Label Text="¡Bienvenido a RideUni!"
+           FontSize="28"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           Margin="0,20,0,0"
+           TextColor="#003f7f"/>
+
+        <Label x:Name="LblUsuario"
+           FontSize="20"
+           HorizontalOptions="Center"
+           TextColor="#333333"/>
 
         <Button Text="Continuar"
-                BackgroundColor="#4CAF50"
-                TextColor="White"
-                Clicked="BtnContinuar_Clicked"/>
+            CornerRadius="12"
+            HeightRequest="55"
+            FontAttributes="Bold"
+            BackgroundColor="#4CAF50"
+            TextColor="White"
+            Margin="0,30,0,0"
+            WidthRequest="200"
+            Clicked="BtnContinuar_Clicked"/>
+
     </VerticalStackLayout>
 </ContentPage>

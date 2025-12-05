@@ -4,44 +4,58 @@
              Title="Inicio Ride"
              NavigationPage.HasBackButton="False">
 
+    <!-- FONDO CON DEGRADADO AZUL -->
     <ContentPage.Background>
-        <LinearGradientBrush>
-            <GradientStop Color="#A7C8FF"/>
-            <GradientStop Color="#E3F0FF" Offset="1"/>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <Grid RowDefinitions="Auto,*" Padding="18">
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="25">
 
-        <ImageButton Source="back.png"
-                     HeightRequest="32" WidthRequest="32"
-                     BackgroundColor="Transparent"
-                     Clicked="BtnBack_Clicked"/>
+            <Label Text="¡Bienvenido a RideUni!"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="Black"
+                HorizontalOptions="Center"/>
 
-        <ScrollView Grid.Row="1">
 
-            <VerticalStackLayout Spacing="20">
+            <Label Text="Raites disponibles"
+                FontSize="22"
+                FontAttributes="Bold"
+                TextColor="Black"/>
 
-                <Label Text="Bienvenido a Ride"
-                       FontSize="28"
-                       FontAttributes="Bold"/>
+            <Frame BackgroundColor="White"
+                CornerRadius="15"
+                Padding="15"
+                HasShadow="True">
+                <Label Text="Sendero ? Uts (7:10 AM)"
+                    TextColor="Black"
+                    FontSize="18"/>
+            </Frame>
 
-                <Button Text="Pedir Ride"
-                        CornerRadius="15"
-                        BackgroundColor="#3F6FFF"
-                        TextColor="White"
-                        Clicked="IrAPedirRide"/>
 
-                <Button Text="Crear Ride"
-                        CornerRadius="15"
-                        BackgroundColor="#3F6FFF"
-                        TextColor="White"
-                        Clicked="IrACrear"/>
+            <Frame BackgroundColor="White"
+                CornerRadius="15"
+                Padding="15"
+                HasShadow="True">
+                <Label Text="Mercado ? Itson (11:00 AM)"
+                    TextColor="Black"
+                    FontSize="18"/>
+            </Frame>
 
-            </VerticalStackLayout>
 
-        </ScrollView>
+            <Button Text="Ver más Raites"
+                 BackgroundColor="#005BBB"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 CornerRadius="10"
+                 HeightRequest="50"
+                 Clicked="BtnVerRaites_Clicked"/>
 
-    </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>

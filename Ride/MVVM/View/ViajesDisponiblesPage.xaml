@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ride.MVVM.View.ViajesDisponiblesPage"
+             Title="ViajesDisponiblesPage">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#CFE1FF" Offset="0.0"/>
+            <GradientStop Color="#F4F9FF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Raites disponibles cerca de ti"
+               FontAttributes="Bold"
+               FontSize="22"
+               TextColor="#003F88"/>
+
+
+        <Frame BackgroundColor="White"
+               CornerRadius="15"
+               Padding="15"
+               HasShadow="True">
+
+            <VerticalStackLayout>
+                <Label Text="Destino: Uts"
+                       FontSize="18"
+                       TextColor="Black"/>
+
+                <Label Text="Hora: 7:30 AM"
+                       FontSize="14"
+                       TextColor="#444"/>
+
+                <Button Text="Pedir este ride"
+                        BackgroundColor="#005BBB"
+                        TextColor="White"
+                        CornerRadius="20"/>
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

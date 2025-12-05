@@ -8,6 +8,9 @@ namespace Ride
         {
             InitializeComponent();
 
+            // Registrar rutas (UNA VEZ)
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            Routing.RegisterRoute(nameof(CrearCuentaPage), typeof(CrearCuentaPage));
             Routing.RegisterRoute(nameof(PaginaPrincipal), typeof(PaginaPrincipal));
             Routing.RegisterRoute(nameof(PedirRide), typeof(PedirRide));
             Routing.RegisterRoute(nameof(Perfil), typeof(Perfil));
@@ -19,4 +22,7 @@ namespace Ride
             Routing.RegisterRoute(nameof(SolicitarRaitePage), typeof(SolicitarRaitePage));
         }
     }
+    
 }
+    
+

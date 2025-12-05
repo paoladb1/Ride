@@ -102,6 +102,9 @@
 	  <MauiXaml Update="MVVM\View\SolicitarRaitePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\ViajesDisponiblesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

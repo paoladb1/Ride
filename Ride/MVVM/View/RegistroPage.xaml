@@ -4,7 +4,6 @@
              x:Class="Ride.MVVM.View.RegistroPage"
              Title="RegistroPage">
 
-  
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A7C8FF" Offset="0.0"/>
@@ -16,45 +15,44 @@
         <VerticalStackLayout Padding="30" Spacing="20">
 
             <Label Text="CREAR CUENTA"
-                   FontSize="32" FontAttributes="Bold"
-                   HorizontalOptions="Center"/>
+                FontSize="32" FontAttributes="Bold"
+                HorizontalOptions="Center"/>
 
             <Label Text="Nombre Completo" />
             <Entry Placeholder="Ej: Ana María López"
-                   Text="{Binding NombreCompleto}"/>
+                Text="{Binding NombreCompleto}"/>
 
             <Label Text="Correo Electrónico" />
             <Entry Placeholder="ejemplo@dominio.com"
-                   Keyboard="Email"
-                   Text="{Binding Correo}"/>
+                Keyboard="Email"
+                Text="{Binding Correo}"/>
 
             <Label Text="Contraseña" />
             <Entry Placeholder="Mínimo 8 caracteres"
-                   IsPassword="True"
-                   Text="{Binding Contraseña}"/>
+                IsPassword="True"
+                Text="{Binding Contraseña}"/>
 
             <Label Text="Selecciona tu Rol" FontAttributes="Bold"/>
 
             <Grid ColumnDefinitions="*,*">
                 <RadioButton Content="Conductor"
-                             GroupName="UserRole"
-                             IsChecked="{Binding IsConductor}" />
+                          GroupName="UserRole"
+                          IsChecked="{Binding IsConductor}" />
 
                 <RadioButton Grid.Column="1"
-                             Content="Solicitante"
-                             GroupName="UserRole"
-                             IsChecked="{Binding IsSolicitante}" />
+                          Content="Solicitante"
+                          GroupName="UserRole"
+                          IsChecked="{Binding IsSolicitante}" />
             </Grid>
 
             <Button Text="REGISTRARME"
-                    HeightRequest="55"
-                    Command="{Binding RegistrarCommand}" />
+                 HeightRequest="55"
+                 Command="{Binding RegistrarCommand}" />
 
             <Button Text="¿Ya tienes cuenta? Inicia sesión"
-                    BackgroundColor="Transparent"
-                    Command="{Binding IrALoginCommand}" />
+                 BackgroundColor="Transparent"
+                 Command="{Binding IrALoginCommand}" />
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

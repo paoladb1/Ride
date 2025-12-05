@@ -7,9 +7,15 @@ namespace Ride.MVVM.View
             InitializeComponent();
         }
 
-        private async void BtnBack_Clicked(object sender, EventArgs e)
+        private void EliminarRaite(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("..");
+            var btn = sender as Button;
+            var texto = btn?.CommandParameter as string;
+
+            if (btn?.Parent?.Parent is Frame frame)
+            {
+                (frame.Parent as VerticalStackLayout)?.Children.Remove(frame);
+            }
         }
     }
 }

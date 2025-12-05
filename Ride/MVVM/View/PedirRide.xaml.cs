@@ -1,3 +1,5 @@
+using Ride.MVVM.View;
+
 namespace Ride.MVVM.View
 {
     public partial class PedirRide : ContentPage
@@ -7,14 +9,9 @@ namespace Ride.MVVM.View
             InitializeComponent();
         }
 
-        private async void BtnBack_Clicked(object sender, EventArgs e)
+        private async void OnBuscarClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("..");
-        }
-
-        private async void IrADetalle(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync(nameof(DetalleRaitePage));
+            await Navigation.PushAsync(new ViajesDisponiblesPage());
         }
     }
 }

@@ -3,37 +3,49 @@
              x:Class="Ride.MVVM.View.Mensajes"
              Title="Mensajes">
 
+    <ContentPage.BindingContext>
+       
+    </ContentPage.BindingContext>
+
     <ContentPage.Background>
-        <LinearGradientBrush>
-            <GradientStop Color="#A7C8FF"/>
-            <GradientStop Color="#E3F0FF" Offset="1"/>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#A7C8FF" Offset="0.0"/>
+            <GradientStop Color="#E3F0FF" Offset="1.0"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <Grid RowDefinitions="Auto,*" Padding="20">
+    <Grid RowDefinitions="*,Auto" Padding="15">
 
-        <ImageButton Source="back.png"
-                     BackgroundColor="Transparent"
-                     WidthRequest="32"
-                     HeightRequest="32"
-                     Clicked="Back_Clicked"/>
 
-        <ScrollView Grid.Row="1">
+        <CollectionView ItemsSource="{Binding Mensajes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5" CornerRadius="15"
+                        BackgroundColor="#FFFFFF">
+                        <Label Text="{Binding}" />
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-            <VerticalStackLayout Spacing="20">
 
-                <Label Text="Tus mensajes"
-                       FontSize="26"
-                       FontAttributes="Bold"/>
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Padding="0,10,0,0">
 
-                <Frame BackgroundColor="White" CornerRadius="20" Padding="20">
-                    <Label Text="No tienes mensajes nuevos."
-                           FontSize="18"/>
-                </Frame>
+            <Entry Grid.Column="0"
+                Placeholder="Escribe un mensaje…"
+                Text="{Binding MensajeNuevo}"
+                HeightRequest="45"
+                BackgroundColor="White"/>
 
-            </VerticalStackLayout>
-
-        </ScrollView>
+            <Button Grid.Column="1"
+                 Text="Enviar"
+                 Command="{Binding EnviarCommand}"
+                 BackgroundColor="#005BBB"
+                 TextColor="White"
+                 CornerRadius="20"
+                 WidthRequest="85"
+                 HeightRequest="45"/>
+        </Grid>
 
     </Grid>
 

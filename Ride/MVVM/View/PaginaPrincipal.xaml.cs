@@ -1,4 +1,4 @@
-using Ride.MVVM.View;
+using Microsoft.Maui.Controls;
 
 namespace Ride.MVVM.View
 {
@@ -9,19 +9,15 @@ namespace Ride.MVVM.View
             InitializeComponent();
         }
 
-        private async void IrAPedirRide(object sender, EventArgs e)
+
+        private async void BtnLogin_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync(nameof(PedirRide));
+            await Shell.Current.GoToAsync(nameof(LoginPage));
         }
 
-        private async void IrACrearRide(object sender, EventArgs e)
+        private async void BtnRegistro_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync(nameof(CrearRaitePage));
-        }
-
-        private async void IrAMisRides(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync(nameof(MisRides));
+            await Shell.Current.GoToAsync(nameof(CrearCuentaPage));
         }
     }
 }
