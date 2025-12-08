@@ -1,38 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.SolicitarRaitePage"
-             Title="Solicitar Raite"
-             NavigationPage.HasBackButton="False">
+             x:Name="PageRoot"
+             Title="Mis Raites"
+             NavigationPage.HasBackButton="True">
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A7C8FF" Offset="0.0"/>
-            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+            <GradientStop Color="#E0F7FF" Offset="1.0"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <VerticalStackLayout Padding="25" Spacing="20">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
 
-        <Label Text="Opciones de Raites Disponibles" 
-            FontSize="26" 
-            FontAttributes="Bold" 
-            TextColor="#005BBB"/>
+            <Label Text="Tus Raites Solicitados"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#003E7E"
+                   HorizontalOptions="Center"/>
 
-        <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-            <Label Text="Conductor: Carlos Mendez - 5:15 PM" />
-        </Frame>
-        <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-            <Label Text="Conductora: Ana Lopez - 7:15 AM" />
-        </Frame>
-        <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-            <Label Text="Conductor: Rodolfo - 1:00 PM" />
-        </Frame>
+            <CollectionView ItemsSource="{Binding MisRaites}" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="15"
+                               Padding="15"
+                               Margin="0,5"
+                               BackgroundColor="White"
+                               HasShadow="True"
+                               BorderColor="#DDD">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <Label Text="{Binding}"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       TextColor="#003E7E"
+                                       VerticalOptions="Center"
+                                       LineBreakMode="TailTruncation"/>
+                                <Button Text="Eliminar"
+                                        Grid.Column="1"
+                                        BackgroundColor="#FF5C5C"
+                                        TextColor="White"
+                                        CornerRadius="12"
+                                        HeightRequest="38"
+                                        WidthRequest="90"
+                                        Command="{Binding EliminarCommand}"
+                                        CommandParameter="{Binding .}"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-        <Button Text="Solicitar Raite"
-             BackgroundColor="#005BBB"
-             TextColor="White"
-             CornerRadius="12"
-             HeightRequest="50" />
-
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

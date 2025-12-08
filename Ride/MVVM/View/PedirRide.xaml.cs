@@ -1,17 +1,18 @@
-using Ride.MVVM.View;
+using Ride.MVVM.Services;
 
-namespace Ride.MVVM.View
+namespace Ride.MVVM.View;
+
+public partial class PedirRide : ContentPage
 {
-    public partial class PedirRide : ContentPage
-    {
-        public PedirRide()
-        {
-            InitializeComponent();
-        }
+    private readonly MockService _service = MockService.Instance;
 
-        private async void OnBuscarClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ViajesDisponiblesPage());
-        }
+    public PedirRide()
+    {
+        InitializeComponent();
+    }
+
+    private async void OnBuscarClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new MisRides());
     }
 }

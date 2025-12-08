@@ -1,4 +1,6 @@
 using Ride.MVVM.View;
+using Microsoft.Maui.Controls;
+using Ride.MVVM.ViewModel;
 
 namespace Ride.MVVM.View
 {
@@ -12,7 +14,7 @@ namespace Ride.MVVM.View
 
         private async void ConductorInfo_Tapped(object sender, TappedEventArgs e)
         {
-            await DisplayAlert("Conductor", "Aquí puedes mostrar más información del conductor.", "OK");
+            await DisplayAlert("Conductor", "Aqui puedes mostrar mas informacion del conductor.", "OK");
         }
     }
 }

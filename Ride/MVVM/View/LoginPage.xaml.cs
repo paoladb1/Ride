@@ -1,28 +1,25 @@
-using Microsoft.Maui.Controls;
+using Ride.MVVM.Services;
 
-namespace Ride.MVVM.View
+namespace Ride.MVVM.View;
+
+public partial class LoginPage : ContentPage
 {
-    public partial class LoginPage : ContentPage
+    MockService _service = MockService.Instance;
+
+    public LoginPage()
     {
-        public LoginPage()
+        InitializeComponent();
+    }
+
+    private async void OnLoginClicked(object sender, EventArgs e)
+    {
+        if (string.IsNullOrWhiteSpace(EntryEmail.Text) ||
+            string.IsNullOrWhiteSpace(EntryPassword.Text))
         {
-            InitializeComponent();
+            await DisplayAlert("Error", "Ingresa tu correo y contraseña", "OK");
+            return;
         }
 
-        private async void OnLoginClicked(object sender, EventArgs e)
-        {
-            string email = EntryEmail.Text;
-            string password = EntryPassword.Text;
-
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
-            {
-                await DisplayAlert("Error", "Llena todos los campos.", "OK");
-                return;
-            }
-
-
-            var bienvenidaPage = new BienvenidaPage(email);
-            await Navigation.PushAsync(bienvenidaPage);
-        }
+        
     }
 }

@@ -1,8 +1,9 @@
-using System.Windows.Input;
 using Microsoft.Maui.Controls;
+using Ride.MVVM.View;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
-namespace Ride
+namespace Ride.MVVM.ViewModel
 {
     public class DetalleRaiteViewModel
     {
@@ -16,7 +17,7 @@ namespace Ride
         private async Task SolicitarRaite()
         {
             await Application.Current.MainPage.DisplayAlert("Solicitud Enviada", "Tu solicitud fue enviada al conductor.", "OK");
-            await Shell.Current.GoToAsync(nameof(MVVM.View.MisRides));
+            await Shell.Current.GoToAsync(nameof(MisRides));
         }
     }
 }

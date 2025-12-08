@@ -3,39 +3,39 @@ using System.Windows.Input;
 
 namespace Ride.MVVM.ViewModel
 {
-    public class MensajesViewModel : BaseViewModel
+    public class MensajesViewModel : BindableObject
     {
-        public ObservableCollection<string> Mensajes { get; set; } = new();
+        public ObservableCollection<MensajesViewModel> Mensajes { get; set; }
+        public string MensajeNuevo { get; set; }
 
-        private string _mensajeNuevo;
-        public string MensajeNuevo
-        {
-            get => _mensajeNuevo;
-            set
-            {
-                _mensajeNuevo = value;
-                OnPropertyChanged();
-            }
-        }
+        // Agregar la propiedad faltante 'Texto'
+        public string Texto { get; set; }
 
         public ICommand EnviarCommand { get; }
+        public ICommand EliminarCommand { get; }
 
         public MensajesViewModel()
         {
-            Mensajes.Add("Hola, ¿a qué hora pasas?");
-            Mensajes.Add("En 10 minutos.");
-            Mensajes.Add("Perfecto, aquí te espero.");
+            Mensajes = new ObservableCollection<MensajesViewModel>();
 
-            EnviarCommand = new Command(EnviarMensaje);
-        }
-
-        private void EnviarMensaje()
-        {
-            if (!string.IsNullOrWhiteSpace(MensajeNuevo))
+            EnviarCommand = new Command(() =>
             {
-                Mensajes.Add(MensajeNuevo);
-                MensajeNuevo = string.Empty;
-            }
+                if (!string.IsNullOrWhiteSpace(MensajeNuevo))
+                {
+                    Mensajes.Add(new MensajesViewModel { Texto = MensajeNuevo });
+                    MensajeNuevo = string.Empty;
+                    OnPropertyChanged(nameof(MensajeNuevo));
+                }
+            });
+
+            EliminarCommand = new Command<MensajesViewModel>((msg) =>
+            {
+                if (msg != null && Mensajes.Contains(msg))
+                {
+                    Mensajes.Remove(msg);
+                }
+            });
+
         }
     }
 }

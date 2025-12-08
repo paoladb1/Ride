@@ -7,12 +7,16 @@ namespace Ride.MVVM.View
         public HomePage()
         {
             InitializeComponent();
+            BindingContext = new HomeViewModel();
         }
 
-        private async void BtnVerRaites_Clicked(object sender, EventArgs e)
+        private async void BtnVerMisRaites_Clicked(object sender, EventArgs e)
         {
-            // Navegar a la página PedirRide (debes tenerla creada)
-            await Shell.Current.GoToAsync(nameof(PedirRide));
+            var homeVM = this.BindingContext as HomeViewModel;
+            await Navigation.PushAsync(new SolicitarRaitePage(homeVM));
         }
     }
 }
+
+
+

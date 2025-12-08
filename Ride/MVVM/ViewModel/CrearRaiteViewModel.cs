@@ -1,37 +1,66 @@
-using Ride;
-using Ride.MVVM.View;
+using System;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using Microsoft.Maui.Controls;
 
-namespace Ride;
-
-public class CrearRaiteViewModel
+namespace Ride.MVVM.ViewModel
 {
-    public string Origen { get; set; }
-    public string Destino { get; set; }
-    public DateTime FechaSalida { get; set; } = DateTime.Now;
-    public TimeSpan HoraSalida { get; set; } = DateTime.Now.TimeOfDay;
-    public int AsientosDisponibles { get; set; }
-    public decimal PrecioPorAsiento { get; set; }
-
-    public ICommand PublicarCommand { get; }
-    public string HomePage { get; private set; }
-
-    public CrearRaiteViewModel()
+    public class CrearRaiteViewModel : BindableObject
     {
-        PublicarCommand = new Command(async () => await PublicarRaite());
-    }
+        // Campos del formulario
+        public string Origen { get; set; }
+        public string Destino { get; set; }
+        public DateTime FechaSalida { get; set; } = DateTime.Now;
+        public TimeSpan HoraSalida { get; set; } = DateTime.Now.TimeOfDay;
+        public int AsientosDisponibles { get; set; }
+        public decimal PrecioPorAsiento { get; set; }
 
-    private async Task PublicarRaite()
-    {
-        if (string.IsNullOrWhiteSpace(Origen) || string.IsNullOrWhiteSpace(Destino) || AsientosDisponibles <= 0 || PrecioPorAsiento <= 0)
+        // Lista global de Raites
+        public static ObservableCollection<string> Raites { get; set; } = new ObservableCollection<string>();
+
+        // Comando para publicar
+        public ICommand PublicarCommand { get; }
+
+        public CrearRaiteViewModel()
         {
-            await Application.Current.MainPage.DisplayAlert("Error", "Por favor completa todos los datos correctamente.", "OK");
-            return;
+            PublicarCommand = new Command(async () => await PublicarRaite());
         }
 
-        await Application.Current.MainPage.DisplayAlert("Éxito", "El raite ha sido publicado correctamente.", "OK");
-        await Shell.Current.GoToAsync(nameof(HomePage));
-    }
+        private async Task PublicarRaite()
+        {
+            // Validacion de campos
+            if (string.IsNullOrWhiteSpace(Origen) || string.IsNullOrWhiteSpace(Destino) ||
+                AsientosDisponibles <= 0 || PrecioPorAsiento <= 0)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Por favor completa todos los campos correctamente.", "OK");
+                return;
+            }
 
-  
+            // Crear texto del raite
+            string raite = $"{Origen} - {Destino} ({FechaSalida:dd/MM/yyyy} {HoraSalida:hh\\:mm}) - Asientos: {AsientosDisponibles} - Precio: ${PrecioPorAsiento}";
+
+            // Agregar a la lista global
+            Raites.Add(raite);
+
+            // Mostrar mensaje de exito
+            await Application.Current.MainPage.DisplayAlert("Exito", "Raite publicado correctamente.", "OK");
+
+            // Limpiar campos
+            Origen = Destino = "";
+            FechaSalida = DateTime.Now;
+            HoraSalida = DateTime.Now.TimeOfDay;
+            AsientosDisponibles = 0;
+            PrecioPorAsiento = 0;
+            OnPropertyChanged(nameof(Origen));
+            OnPropertyChanged(nameof(Destino));
+            OnPropertyChanged(nameof(FechaSalida));
+            OnPropertyChanged(nameof(HoraSalida));
+            OnPropertyChanged(nameof(AsientosDisponibles));
+            OnPropertyChanged(nameof(PrecioPorAsiento));
+
+            // Navegar a la pantalla de mis raites
+            await Shell.Current.GoToAsync(nameof(MisRidesPage));
+        }
+    }
 }

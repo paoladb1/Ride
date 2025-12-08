@@ -1,89 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Ride.MVVM.ViewModel"
              x:Class="Ride.MVVM.View.MisRides"
-             Title="Mis Rides"
-             NavigationPage.HasBackButton="False">
+             Title="Mis Rides">
 
+    <!-- FONDO DEGRADADO -->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="#A7C8FF" Offset="0.0"/>
-            <GradientStop Color="#E3F0FF" Offset="1.0"/>
+            <GradientStop Color="#7FB3FF" Offset="0.0"/>
+            <GradientStop Color="#E9F2FF" Offset="1.0"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
+        <VerticalStackLayout Padding="20" Spacing="10">
 
-            <Label Text="Tus raites" 
-               FontSize="26" FontAttributes="Bold"
-               TextColor="#005BBB"/>
+            <Label Text="Tus raites"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   TextColor="#003E7E"
+                   HorizontalOptions="Center"
+                   Margin="0,10"/>
 
-            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-                <VerticalStackLayout>
-                    <Label Text="Sendero - Uts (7:10 AM)" />
+            <!-- LISTA DE RITES -->
+            <CollectionView ItemsSource="{Binding Rides}"
+                            SelectionMode="None">
 
-                    <Button Text="Eliminar"
-                        BackgroundColor="#005BBB"
-                        TextColor="White"
-                        CornerRadius="8"
-                        HeightRequest="35"
-                        WidthRequest="100"
-                        HorizontalOptions="End"
-                        Margin="0,10,0,0"
-                        Clicked="EliminarRaite_Clicked"/>
-                </VerticalStackLayout>
-            </Frame>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
 
-            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-                <VerticalStackLayout>
-                    <Label Text="Pueblo Yaqui - UTS (6:50 AM)" />
+                        <Frame CornerRadius="15"
+                               Padding="15"
+                               Margin="0,5"
+                               BackgroundColor="White"
+                               HasShadow="True"
+                               BorderColor="#DDD">
 
-                    <Button Text="Eliminar"
-                        BackgroundColor="#005BBB"
-                        TextColor="White"
-                        CornerRadius="8"
-                        HeightRequest="35"
-                        WidthRequest="100"
-                        HorizontalOptions="End"
-                        Margin="0,10,0,0"
-                        Clicked="EliminarRaite_Clicked"/>
-                </VerticalStackLayout>
-            </Frame>
+                            <Grid ColumnDefinitions="*, Auto" VerticalOptions="Center">
 
+                                <!-- TEXTO DEL RIDE -->
+                                <Label Text="{Binding .}"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       TextColor="#003E7E"
+                                       VerticalOptions="Center"
+                                       LineBreakMode="TailTruncation"/>
 
-            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-                <VerticalStackLayout>
-                    <Label Text="Valle dorado - Uts (8:00 AM)" />
+                                <!-- BOTON ELIMINAR -->
+                                <Button Text="Eliminar"
+                                        Grid.Column="1"
+                                        BackgroundColor="#FF5C5C"
+                                        TextColor="White"
+                                        CornerRadius="12"
+                                        HeightRequest="38"
+                                        WidthRequest="90"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarCommand}"
+                                        CommandParameter="{Binding .}"/>
+                            </Grid>
 
-                    <Button Text="Eliminar"
-                        BackgroundColor="#005BBB"
-                        TextColor="White"
-                        CornerRadius="8"
-                        HeightRequest="35"
-                        WidthRequest="100"
-                        HorizontalOptions="End"
-                        Margin="0,10,0,0"
-                        Clicked="EliminarRaite_Clicked"/>
-                </VerticalStackLayout>
-            </Frame>
+                        </Frame>
 
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
 
-            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-                <VerticalStackLayout>
-                    <Label Text="Centro - Itson (7:45 AM)" />
-
-                    <Button Text="Eliminar"
-                        BackgroundColor="#005BBB"
-                        TextColor="White"
-                        
-                        CornerRadius="8"
-                        HeightRequest="35"
-                        WidthRequest="100"
-                        HorizontalOptions="End"
-                        Margin="0,10,0,0"
-                        Clicked="EliminarRaite_Clicked"/>
-                </VerticalStackLayout>
-            </Frame>
+            </CollectionView>
 
         </VerticalStackLayout>
     </ScrollView>

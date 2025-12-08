@@ -1,8 +1,8 @@
 namespace Ride.MVVM.View;
 
-public partial class Mensajes : ContentPage
+public partial class EditarPerfil : ContentPage
 {
-    public Mensajes()
+    public EditarPerfil()
     {
         InitializeComponent();
     }
