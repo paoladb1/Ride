@@ -1,118 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ride.MVVM.View.PedirRide"
-             NavigationPage.HasBackButton="False"
              Title="Pedir Ride">
 
-    <ContentPage.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#6BA8FF" Offset="0"/>
-            <GradientStop Color="#DCEBFF" Offset="1"/>
-        </LinearGradientBrush>
-    </ContentPage.Background>
+    <VerticalStackLayout Padding="25" Spacing="20">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="25" Spacing="22">
+        <Label Text="Buscar Raite"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#000000"/>
 
-            <!-- IMAGEN PRINCIPAL -->
-            <Frame Padding="0" HasShadow="True" CornerRadius="20">
-                <Image Source="mapa.png"
-                       HeightRequest="200"
-                       Aspect="AspectFill"
-                       HorizontalOptions="Center"/>
-            </Frame>
+        <Entry x:Name="EntryOrigen"
+               Placeholder="Origen"
+               TextColor="#000000"/>
 
-            <!-- TITULO -->
-            <VerticalStackLayout Spacing="2">
-                <Label Text="Encuentra tu raite ideal"
-                       FontSize="24"
-                       FontAttributes="Bold"
-                       TextColor="#003F88"
-                       HorizontalTextAlignment="Center"/>
+        <Entry x:Name="EntryDestino"
+               Placeholder="Destino"
+               TextColor="#000000"/>
 
-               
-            </VerticalStackLayout>
+        <Button Text="Buscar"
+                BackgroundColor="#005BBB"
+                TextColor="White"
+                CornerRadius="20"
+                HeightRequest="50"
+                Clicked="OnBuscarClicked"/>
 
-
-            <!-- TARJETA DE FORMULARIO -->
-            <Frame BackgroundColor="White"
-                   CornerRadius="25"
-                   Padding="25"
-                   HasShadow="True">
-
-                <VerticalStackLayout Spacing="18">
-
-                    <!-- DESTINO -->
-                    <Frame HasShadow="False" BackgroundColor="#F2F6FF"
-                           CornerRadius="15" Padding="12">
-                        <Grid ColumnDefinitions="Auto,*">
-                            <Image Source="ubicacion.png"
-                                   HeightRequest="22" WidthRequest="22"/>
-
-                            <Entry Grid.Column="1"
-                                   Placeholder="Destino"
-                                   PlaceholderColor="#888"
-                                   TextColor="Black"
-                                   BackgroundColor="Transparent"/>
-                        </Grid>
-                    </Frame>
-
-                    <!-- HORA -->
-                    <Frame HasShadow="False" BackgroundColor="#F2F6FF"
-                           CornerRadius="15" Padding="12">
-                        <Grid ColumnDefinitions="Auto,*">
-                            <Image Source="reloj.png"
-                                   HeightRequest="22" WidthRequest="22"/>
-
-                            <Entry Grid.Column="1"
-                                   Placeholder="Hora de salida"
-                                   PlaceholderColor="#888"
-                                   TextColor="Black"
-                                   BackgroundColor="Transparent"/>
-                        </Grid>
-                    </Frame>
-
-
-                    <!-- TIPO DE RIDE -->
-                    <Label Text="Tipo de ride"
-                           FontAttributes="Bold"
-                           TextColor="#003F88"/>
-
-                    <HorizontalStackLayout Spacing="10">
-
-                        <Frame Padding="12" CornerRadius="15"
-                               BackgroundColor="#E8F0FF">
-                            <Label Text="Rapido" TextColor="#003F88"/>
-                        </Frame>
-
-                        <Frame Padding="12" CornerRadius="15"
-                               BackgroundColor="#E8F0FF">
-                            <Label Text="Economico" TextColor="#003F88"/>
-                        </Frame>
-
-                        <Frame Padding="12" CornerRadius="15"
-                               BackgroundColor="#E8F0FF">
-                            <Label Text="Compartido" TextColor="#003F88"/>
-                        </Frame>
-
-                    </HorizontalStackLayout>
-
-
-                </VerticalStackLayout>
-            </Frame>
-
-            <!-- BOTON BUSCAR -->
-            <Button Text="Buscar rides disponibles"
-                    HeightRequest="55"
-                    CornerRadius="20"
-                    BackgroundColor="#005BBB"
-                    TextColor="White"
-                    FontAttributes="Bold"
-                    FontSize="18"
-                    Margin="0,10"
-                    Clicked="OnBuscarClicked"/>
-
-        </VerticalStackLayout>
-    </ScrollView>
+    </VerticalStackLayout>
 
 </ContentPage>

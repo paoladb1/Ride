@@ -1,57 +1,136 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Ride.MVVM.View.SolicitarRaitePage"
-             x:Name="PageRoot"
-             Title="Mis Raites"
-             NavigationPage.HasBackButton="True">
+             xmlns:vm="clr-namespace:Ride.MVVM.ViewModel"
+             x:Class="Ride.MVVM.View.MisRides"
+             Title="Mis Rides">
 
+    <!-- FONDO DEGRADADO -->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="#A7C8FF" Offset="0.0"/>
-            <GradientStop Color="#E0F7FF" Offset="1.0"/>
+            <GradientStop Color="#7FB3FF" Offset="0.0"/>
+            <GradientStop Color="#E9F2FF" Offset="1.0"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
+        <VerticalStackLayout Padding="20" Spacing="10">
 
-            <Label Text="Tus Raites Solicitados"
-                   FontSize="26"
+            <Label Text="Tus raites"
+                   FontSize="30"
                    FontAttributes="Bold"
                    TextColor="#003E7E"
-                   HorizontalOptions="Center"/>
+                   HorizontalOptions="Center"
+                   Margin="0,10"/>
 
-            <CollectionView ItemsSource="{Binding MisRaites}" SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame CornerRadius="15"
+           
+  
+                <CollectionView ItemsSource="{Binding Rides}"
+                            SelectionMode="None">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Frame CornerRadius="15"
                                Padding="15"
                                Margin="0,5"
                                BackgroundColor="White"
                                HasShadow="True"
                                BorderColor="#DDD">
-                            <Grid ColumnDefinitions="*, Auto">
-                                <Label Text="{Binding}"
+
+                                <Grid ColumnDefinitions="*, Auto" VerticalOptions="Center">
+
+                                 
+                                    <Label Text="{Binding .}"
                                        FontSize="16"
                                        FontAttributes="Bold"
                                        TextColor="#003E7E"
                                        VerticalOptions="Center"
                                        LineBreakMode="TailTruncation"/>
-                                <Button Text="Eliminar"
+
+                                    
+                                    <Button Text="Eliminar"
                                         Grid.Column="1"
                                         BackgroundColor="#FF5C5C"
                                         TextColor="White"
                                         CornerRadius="12"
                                         HeightRequest="38"
                                         WidthRequest="90"
-                                        Command="{Binding EliminarCommand}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarCommand}"
                                         CommandParameter="{Binding .}"/>
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                                </Grid>
+
+                            </Frame>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+             
+                <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                    <VerticalStackLayout>
+                        <Label Text="Sendero - Universidad (7:10 AM)" />
+
+                        <Button Text="Eliminar"
+                        BackgroundColor="#005BBB"
+                        TextColor="White"
+                        CornerRadius="8"
+                        HeightRequest="35"
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        Margin="0,10,0,0"
+                        Clicked="EliminarRaite"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                    <VerticalStackLayout>
+                        <Label Text="Pueblo Yaqui - UTS (6:50 AM)" />
+
+                        <Button Text="Eliminar"
+                        BackgroundColor="#005BBB"
+                        TextColor="White"
+                        CornerRadius="8"
+                        HeightRequest="35"
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        Margin="0,10,0,0"
+                        Clicked="EliminarRaite"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                    <VerticalStackLayout>
+                        <Label Text="Uts - Mercado (8:00 AM)" />
+
+                        <Button Text="Eliminar"
+                        BackgroundColor="#005BBB"
+                        TextColor="White"
+                        CornerRadius="8"
+                        HeightRequest="35"
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        Margin="0,10,0,0"
+                        Clicked="EliminarRaite"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                    <VerticalStackLayout>
+                        <Label Text="Centro - Salle (7:45 AM)" />
+
+                        <Button Text="Eliminar"
+                        BackgroundColor="#005BBB"
+                        TextColor="White"
+                        CornerRadius="8"
+                        HeightRequest="35"
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        Margin="0,10,0,0"
+                        Clicked="EliminarRaite"/>
+                    </VerticalStackLayout>
+                </Frame>
+              
 
         </VerticalStackLayout>
     </ScrollView>

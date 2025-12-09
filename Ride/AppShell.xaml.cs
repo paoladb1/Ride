@@ -21,5 +21,7 @@ namespace Ride
             Routing.RegisterRoute(nameof(DetalleRaitePage), typeof(DetalleRaitePage));
             Routing.RegisterRoute(nameof(SolicitarRaitePage), typeof(SolicitarRaitePage));
         }
+
+        public object MisRides { get; private set; }
     }
 }

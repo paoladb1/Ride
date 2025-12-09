@@ -1,20 +1,42 @@
+using System;
 using Microsoft.Maui.Controls;
 
 namespace Ride.MVVM.View
 {
+    [QueryProperty(nameof(Usuario), "usuario")]
     public partial class BienvenidaPage : ContentPage
     {
-        public BienvenidaPage(string usuario)
+        private string usuario;
+        public string Usuario
+        {
+            get => usuario;
+            set
+            {
+                usuario = value;
+                LblUsuario.Text = string.IsNullOrWhiteSpace(usuario)
+                                  ? "Hola!"
+                                  : $"Hola, {usuario}!";
+            }
+        }
+
+        public BienvenidaPage()
         {
             InitializeComponent();
-
-            LblUsuario.Text = $"Hola, {usuario}!";
         }
 
         private async void BtnContinuar_Clicked(object sender, EventArgs e)
         {
-            // Ir a HomePage
-            await Shell.Current.GoToAsync(nameof(HomePage));
+            
+            await Shell.Current.GoToAsync(nameof(PedirRide));
         }
+
+        private async void BtnVerMasRaites_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(ListaRaitesPage));
+        }
+    }
+
+    internal class ListaRaitesPage
+    {
     }
 }

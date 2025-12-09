@@ -4,6 +4,7 @@
              x:Class="Ride.MVVM.View.BienvenidaPage"
              Title="Bienvenido">
 
+   
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A7C8FF" Offset="0.0"/>
@@ -15,6 +16,7 @@
                          VerticalOptions="Start"
                          HorizontalOptions="Center">
 
+       
         <VerticalStackLayout HorizontalOptions="Center" Spacing="3">
             <Label Text="RideUni"
                    FontSize="40"
@@ -22,24 +24,27 @@
                    HorizontalOptions="Center"
                    TextColor="#005BBB"/>
 
-            <Label Text="Tu viaje empieza aqui"
+            <Label Text="Tu viaje empieza aquí"
                    FontSize="18"
                    HorizontalOptions="Center"
-                   TextColor="#444"/>
+                   TextColor="#444444"/>
         </VerticalStackLayout>
 
+        
         <Label Text="¡Bienvenido a RideUni!"
                FontSize="28"
                FontAttributes="Bold"
                HorizontalOptions="Center"
                Margin="0,20,0,0"
-               TextColor="#003f7f"/>
+               TextColor="#003F7F"/>
 
+       
         <Label x:Name="LblUsuario"
                FontSize="20"
                HorizontalOptions="Center"
                TextColor="#333333"/>
 
+        
         <Button Text="Continuar"
                 CornerRadius="12"
                 HeightRequest="55"
@@ -50,7 +55,7 @@
                 WidthRequest="200"
                 Clicked="BtnContinuar_Clicked"/>
 
-        <Button Text="Ver mas raites"
+        <Button Text="Ver más raites"
                 CornerRadius="12"
                 HeightRequest="55"
                 FontAttributes="Bold"

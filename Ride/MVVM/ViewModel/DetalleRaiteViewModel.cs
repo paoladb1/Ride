@@ -8,6 +8,7 @@ namespace Ride.MVVM.ViewModel
     public class DetalleRaiteViewModel
     {
         public ICommand SolicitarRaiteCommand { get; }
+        public string MisRides { get; private set; }
 
         public DetalleRaiteViewModel()
         {

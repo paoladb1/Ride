@@ -15,7 +15,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="25" Spacing="25">
 
-            <Label Text="¡Bienvenid@s a RideUni!"
+            <Label Text="Bienvenid@s a RideUni"
                    FontSize="28"
                    FontAttributes="Bold"
                    TextColor="#003E7E"
@@ -44,7 +44,7 @@
                                        LineBreakMode="TailTruncation"/>
                                 <Button Text="Solicitar"
                                         Grid.Column="1"
-                                        BackgroundColor="#00A86B"
+                                        BackgroundColor="Blue"
                                         TextColor="White"
                                         CornerRadius="12"
                                         HeightRequest="38"
@@ -66,7 +66,7 @@
                     Clicked="BtnVerMisRaites_Clicked"/>
 
             <Button Text="Crear Raite"
-                    BackgroundColor="#FF7F50"
+                    BackgroundColor="DarkBlue"
                     TextColor="White"
                     FontAttributes="Bold"
                     CornerRadius="12"

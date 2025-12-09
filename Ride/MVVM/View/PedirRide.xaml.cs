@@ -1,18 +1,18 @@
-using Ride.MVVM.Services;
+using Microsoft.Maui.Controls;
 
-namespace Ride.MVVM.View;
-
-public partial class PedirRide : ContentPage
+namespace Ride.MVVM.View
 {
-    private readonly MockService _service = MockService.Instance;
-
-    public PedirRide()
+    public partial class PedirRide : ContentPage
     {
-        InitializeComponent();
-    }
+        public PedirRide()
+        {
+            InitializeComponent();
+        }
 
-    private async void OnBuscarClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new MisRides());
+        private async void OnBuscarClicked(object sender, EventArgs e)
+        {
+            // Navegar a MisRides
+            await Navigation.PushAsync(new MisRides());
+        }
     }
 }

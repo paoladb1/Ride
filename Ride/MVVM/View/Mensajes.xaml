@@ -10,6 +10,7 @@
         <vm:MensajesViewModel />
     </ContentPage.BindingContext>
 
+   
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A7C8FF" Offset="0.0"/>
@@ -17,65 +18,71 @@
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <Grid RowDefinitions="*,Auto" Padding="15">
+    <Grid RowDefinitions="*,Auto,Auto" Padding="15">
 
-        <!-- LISTA DE MENSAJES -->
+
         <CollectionView ItemsSource="{Binding Mensajes}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame Padding="10" Margin="5"
                            CornerRadius="15"
                            BackgroundColor="White">
-
                         <Grid ColumnDefinitions="*,Auto">
 
-                            <!-- TEXTO DEL MENSAJE -->
-                            <Label Text="{Binding Texto}"
-                                   FontSize="16" />
 
-                            <!-- BOTÓN DE ELIMINAR (X GRANDE) -->
-                            <Button Text="X"
+                            <Label Text="{Binding Texto}"
+                                   FontSize="16"
+                                   VerticalOptions="Center"
+                                   TextColor="#000000" />
+
+                            <Button Text="eliminar"
                                     Grid.Column="1"
-                                    FontSize="15"
+                                    FontSize="5"
                                     FontAttributes="Bold"
                                     BackgroundColor="Blue"
                                     TextColor="White"
-                                    CornerRadius="15"
-                                    WidthRequest="45"
-                                    HeightRequest="45"
+                                    CornerRadius="20"
+                                    WidthRequest="50"
+                                    HeightRequest="50"
                                     VerticalOptions="Center"
                                     HorizontalOptions="Center"
-                                    Command="{Binding BindingContext.EliminarCommand,
-                                                      Source={x:Reference PageRoot}}"
+                                    Command="{Binding BindingContext.EliminarCommand, Source={x:Reference PageRoot}}"
                                     CommandParameter="{Binding}" />
-
                         </Grid>
-
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
-        <!-- ENVIAR MENSAJE -->
-        <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
-
+        
+       
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Padding="0,10,0,0">
             <Entry Grid.Column="0"
                    Placeholder="Escribe un mensaje"
+                   PlaceholderColor="#000000"
+                   TextColor="#000000"
                    Text="{Binding MensajeNuevo}"
-                   BackgroundColor="White"
-                   TextColor="Black"
-                   HeightRequest="50"/>
+                   HeightRequest="45"
+                   BackgroundColor="White" />
 
             <Button Grid.Column="1"
                     Text="Enviar"
                     Command="{Binding EnviarCommand}"
                     BackgroundColor="#005BBB"
                     TextColor="White"
+                    CornerRadius="20"
                     WidthRequest="90"
-                    HeightRequest="45"
-                    CornerRadius="20"/>
-
+                    HeightRequest="45"/>
         </Grid>
+
+        
+        <Button Grid.Row="2"
+                Text="Eliminar conversaciÃ³n"
+                BackgroundColor="Blue"
+                TextColor="White"
+                CornerRadius="15"
+                Margin="0,10,0,0"
+                HeightRequest="50"
+                Command="{Binding BorrarConversacionCommand}" />
 
     </Grid>
 
